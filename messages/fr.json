@@ -1,0 +1,140 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "skills": "Compétences",
+    "projects": "Projets",
+    "experience": "Expérience",
+    "education": "Formation",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Bonjour, je suis",
+    "name": "Mahazoasy Heritiana Judicaël",
+    "title": "Développeur Web Junior | Full-Stack",
+    "roles": [
+      "Développeur Full-Stack",
+      "Développeur Web & Mobile",
+      "Passionné d'IA & Data",
+      "Étudiant en Génie Logiciel"
+    ],
+    "location": "Toamasina, Madagascar",
+    "availability": "Ouvert aux opportunités",
+    "ctaProjects": "Voir mes projets",
+    "ctaCv": "Télécharger mon CV",
+    "ctaContact": "Me contacter",
+    "scroll": "Faites défiler"
+  },
+  "about": {
+    "title": "À propos",
+    "subtitle": "Qui suis-je",
+    "based": "Basé à",
+    "text1": "Développeur Web junior récemment diplômé en Informatique, parcours Génie Logiciel. Je conçois des applications Web et mobiles modernes et possède une expérience pratique en frontend, backend, bases de données, API REST, conception UI/UX et conteneurisation.",
+    "text2": "Curieux, autonome et passionné par les nouvelles technologies, je recherche une opportunité professionnelle pour contribuer à des projets concrets et continuer à progresser.",
+    "stats": {
+      "projects": "Projets réalisés",
+      "tech": "Technologies",
+      "languages": "Langues",
+      "graduated": "Diplômé"
+    }
+  },
+  "skills": {
+    "title": "Compétences",
+    "subtitle": "Mon stack technique",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "database": "Bases de données",
+    "mobile": "Mobile",
+    "ai": "IA & Data",
+    "devops": "DevOps & Outils",
+    "design": "Conception",
+    "methods": "Méthodes",
+    "alsoUsed": "Également utilisés"
+  },
+    "projects": {
+    "title": "Projets principaux",
+    "subtitle": "Mes réalisations",
+    "viewCode": "Voir le code",
+    "viewDemo": "Voir la démo",
+    "watchVideo": "Voir la vidéo",
+    "allmada": {
+        "title": "AllMada — Marketplace e-commerce",
+        "description": "Projet de fin d'études : conception et développement d'une marketplace malgache Web et mobile avec une architecture proche des plateformes e-commerce professionnelles. Double administration : un administrateur de la plateforme supervise le marketplace, tandis que chaque vendeur dispose de son propre espace pour gérer ses produits, commandes et activités."
+    },
+    "speaker": {
+        "title": "Speaker Recognition — Reconnaissance du locuteur",
+        "description": "Prototype d'intelligence artificielle permettant de distinguer la voix de l'utilisateur de celle d'une autre personne à partir d'empreintes vocales."
+    },
+    "ocr": {
+        "title": "Application OCR pour examens",
+        "description": "Application de traitement d'images et d'aide à la correction avec classification KNN, visualisation des résultats et génération de documents."
+    },
+    "bible": {
+        "title": "Application mobile Bible",
+        "description": "Application mobile avec navigation, gestion multilingue et intégration de services backend."
+    }
+    },
+  "experience": {
+    "title": "Expérience pratique",
+    "subtitle": "Ce que je sais faire",
+    "items": [
+      "Développement d'interfaces Web responsives avec React, Angular, Next.js et Vue.js.",
+      "Développement backend avec Node.js, NestJS, PHP et Laravel.",
+      "Conception et intégration d'API REST et de systèmes d'authentification.",
+      "Développement et intégration de bases de données MongoDB, PostgreSQL et SQL.",
+      "Développement mobile avec Android/Kotlin et React Native/Expo.",
+      "Utilisation de Git/GitHub, Docker/Docker Compose et Swagger dans les projets.",
+      "Exploration de l'intelligence artificielle avec Python et PyTorch à travers des projets de reconnaissance vocale et de classification."
+    ]
+  },
+  "education": {
+    "title": "Formation",
+    "subtitle": "Mon parcours académique",
+    "degree": "Licence en Informatique — Parcours Génie Logiciel",
+    "school": "Université Adventiste Zurcher (UAZ), Sambaina / Antsirabe",
+    "date": "Diplômé le 2 août 2026"
+  },
+  "softskills": {
+    "title": "Atouts",
+    "items": [
+      "Curiosité technique",
+      "Autonomie",
+      "Esprit d'analyse",
+      "Résolution de problèmes",
+      "Adaptabilité",
+      "Travail en équipe",
+      "Apprentissage continu"
+    ]
+  },
+  "domains": {
+    "title": "Domaines recherchés",
+    "items": [
+      "Développement Web",
+      "Full-Stack",
+      "Frontend",
+      "Backend",
+      "Applications mobiles",
+      "Solutions numériques",
+      "Intelligence artificielle"
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Une opportunité à me proposer ? Écrivez-moi.",
+    "name": "Nom",
+    "email": "Email",
+    "message": "Message",
+    "send": "Envoyer",
+    "sending": "Envoi en cours...",
+    "success": "Message envoyé avec succès !",
+    "error": "Une erreur est survenue. Réessayez.",
+    "phone": "Téléphone",
+    "github": "GitHub",
+    "location": "Localisation"
+  },
+  "footer": {
+    "rights": "Tous droits réservés.",
+    "builtWith": "Construit avec Next.js & Tailwind CSS",
+    "backToTop": "Haut de page"
+  }
+}

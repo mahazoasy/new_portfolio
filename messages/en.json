@@ -1,0 +1,140 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "experience": "Experience",
+    "education": "Education",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Mahazoasy Heritiana Judicaël",
+    "title": "Junior Web Developer | Full-Stack",
+    "roles": [
+      "Full-Stack Developer",
+      "Web & Mobile Developer",
+      "AI & Data Enthusiast",
+      "Software Engineering Student"
+    ],
+    "location": "Toamasina, Madagascar",
+    "availability": "Open to opportunities",
+    "ctaProjects": "View my projects",
+    "ctaCv": "Download my CV",
+    "ctaContact": "Contact me",
+    "scroll": "Scroll down"
+  },
+  "about": {
+    "title": "About me",
+    "subtitle": "Who I am",
+    "based": "Based in",
+    "text1": "Junior Web Developer, recently graduated in Computer Science, Software Engineering track. I build modern web and mobile applications and have hands-on experience in frontend, backend, databases, REST APIs, UI/UX design and containerization.",
+    "text2": "Curious, autonomous and passionate about new technologies, I am looking for a professional opportunity to contribute to real projects and keep improving.",
+    "stats": {
+      "projects": "Projects",
+      "tech": "Technologies",
+      "languages": "Languages",
+      "graduated": "Graduated"
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "My tech stack",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "database": "Databases",
+    "mobile": "Mobile",
+    "ai": "AI & Data",
+    "devops": "DevOps & Tools",
+    "design": "Design",
+    "methods": "Methods",
+    "alsoUsed": "Also used"
+  },
+    "projects": {
+    "title": "Main projects",
+    "subtitle": "My work",
+    "viewCode": "View code",
+    "viewDemo": "View demo",
+    "watchVideo": "Watch video",
+    "allmada": {
+        "title": "AllMada — E-commerce Marketplace",
+        "description": "Final-year project: design and development of a Malagasy web and mobile marketplace with an architecture close to professional e-commerce platforms. Dual administration: a platform administrator supervises the marketplace, while each seller has their own shop to manage products, orders and activities."
+    },
+    "speaker": {
+        "title": "Speaker Recognition",
+        "description": "AI prototype that distinguishes the user's voice from another person's voice using voice embeddings."
+    },
+    "ocr": {
+        "title": "OCR Application for Exams",
+        "description": "Image processing and grading assistance app with KNN classification, results visualization and document generation."
+    },
+    "bible": {
+        "title": "Bible Mobile App",
+        "description": "Mobile app with navigation, multilingual support and backend services integration."
+    }
+    },
+  "experience": {
+    "title": "Practical experience",
+    "subtitle": "What I can do",
+    "items": [
+      "Development of responsive web interfaces with React, Angular, Next.js and Vue.js.",
+      "Backend development with Node.js, NestJS, PHP and Laravel.",
+      "Design and integration of REST APIs and authentication systems.",
+      "Development and integration of MongoDB, PostgreSQL and SQL databases.",
+      "Mobile development with Android/Kotlin and React Native/Expo.",
+      "Use of Git/GitHub, Docker/Docker Compose and Swagger in projects.",
+      "Exploration of artificial intelligence with Python and PyTorch through voice recognition and classification projects."
+    ]
+  },
+  "education": {
+    "title": "Education",
+    "subtitle": "My academic background",
+    "degree": "Bachelor's Degree in Computer Science — Software Engineering",
+    "school": "Université Adventiste Zurcher (UAZ), Sambaina / Antsirabe",
+    "date": "Graduated on August 2, 2026"
+  },
+  "softskills": {
+    "title": "Strengths",
+    "items": [
+      "Technical curiosity",
+      "Autonomy",
+      "Analytical thinking",
+      "Problem solving",
+      "Adaptability",
+      "Teamwork",
+      "Continuous learning"
+    ]
+  },
+  "domains": {
+    "title": "Target areas",
+    "items": [
+      "Web Development",
+      "Full-Stack",
+      "Frontend",
+      "Backend",
+      "Mobile Applications",
+      "Digital Solutions",
+      "Artificial Intelligence"
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Have an opportunity for me? Write to me.",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send",
+    "sending": "Sending...",
+    "success": "Message sent successfully!",
+    "error": "Something went wrong. Please try again.",
+    "phone": "Phone",
+    "github": "GitHub",
+    "location": "Location"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "builtWith": "Built with Next.js & Tailwind CSS",
+    "backToTop": "Back to top"
+  }
+}

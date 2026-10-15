@@ -1,0 +1,271 @@
+@import "tailwindcss";
+
+/* ============================================
+   PALETTE ORANGE (inspirée de ainaenfance.org)
+   Toutes les anciennes familles cyan / purple / pink
+   pointent vers le même orange : plus d'arc-en-ciel.
+   ============================================ */
+@theme {
+  --color-cyan-300: #f4a37b;
+  --color-cyan-400: #e8662f;
+  --color-cyan-500: #d2501e;
+  --color-cyan-600: #b8431a;
+
+  --color-purple-300: #f4a37b;
+  --color-purple-400: #e8662f;
+  --color-purple-500: #d2501e;
+  --color-purple-600: #b8431a;
+
+  --color-pink-300: #f4a37b;
+  --color-pink-400: #e8662f;
+  --color-pink-500: #d2501e;
+  --color-pink-600: #b8431a;
+}
+
+/* ============================================
+   VARIABLES PAR DÉFAUT (DARK MODE)
+   ============================================ */
+:root {
+  --background: #14100d;
+  --foreground: #f5ede3;
+  --muted: #a89a8b;
+  --faint: #7d7064;
+  --card: #1e1814;
+  --card-2: #271f19;
+  --border: #33281f;
+  --accent: #e8662f;
+  --accent-strong: #d2501e;
+  --accent-soft: rgba(232, 102, 47, 0.12);
+}
+
+/* ============================================
+   LIGHT MODE — VARIABLES (fond crème)
+   ============================================ */
+html.light {
+  --background: #fff8e7;
+  --foreground: #1f1a17;
+  --muted: #6b5b4e;
+  --faint: #9a8a7c;
+  --card: #ffffff;
+  --card-2: #fdf0d5;
+  --border: #f0dfc0;
+  --accent: #d2501e;
+  --accent-strong: #b8431a;
+  --accent-soft: #fdebd6;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-card: var(--card);
+  --color-card-2: var(--card-2);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-soft: var(--accent-soft);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Défilement fluide uniquement pour les ancres internes */
+html:has(:target) {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+section {
+  scroll-margin-top: 80px;
+}
+
+/* ---------- Texte "gradient" → couleur unie ---------- */
+.gradient-text {
+  background: none;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  color: var(--accent);
+  animation: none;
+}
+
+/* ---------- Cartes (sans mouvement) ---------- */
+.glow {
+  box-shadow: none;
+}
+
+.card-hover {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-hover:hover {
+  transform: none;
+  border-color: var(--accent);
+  box-shadow: 0 6px 20px rgba(210, 80, 30, 0.12);
+}
+
+/* ---------- Anciens effets : désactivés ---------- */
+.grid-bg {
+  display: none;
+}
+
+.animate-blob,
+.animate-marquee,
+.animate-spin-slow,
+.animate-spin-reverse,
+.animate-float,
+.animate-bounce-y,
+.cursor-blink,
+.shimmer-border {
+  animation: none !important;
+}
+
+.shimmer-border {
+  background: var(--accent);
+}
+
+.gradient-ring {
+  background: var(--accent);
+}
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-strong);
+}
+
+/* ---------- Sélection ---------- */
+::selection {
+  background: rgba(210, 80, 30, 0.25);
+  color: var(--foreground);
+}
+
+/* ============================================
+   REMAPPAGE DES CLASSES CODÉES EN DUR
+   (valable en dark ET en light, via variables)
+   ============================================ */
+
+/* ---- Fonds ---- */
+[class*="bg-[#06060a]"],
+[class*="bg-[#0a0a0f]"] {
+  background-color: var(--background) !important;
+}
+
+[class*="bg-[#0f0f16]"],
+[class*="bg-[#0d0d14]"],
+[class*="bg-[#08080e]"] {
+  background-color: var(--card) !important;
+}
+
+[class*="bg-[#14141c]"],
+[class*="bg-[#1c1c28]"] {
+  background-color: var(--card-2) !important;
+}
+
+/* ---- Bordures ---- */
+[class*="border-[#1f1f2e]"],
+[class*="border-[#262633]"] {
+  border-color: var(--border) !important;
+}
+
+/* ---- Textes gris ---- */
+[class*="text-gray-100"],
+[class*="text-gray-200"] { color: var(--foreground) !important; }
+
+[class*="text-gray-300"],
+[class*="text-gray-400"],
+[class*="text-gray-500"] { color: var(--muted) !important; }
+
+[class*="text-gray-600"] { color: var(--faint) !important; }
+
+/* ---- Gradients de fond ---- */
+[class*="from-[#0f0f16]"] { --tw-gradient-from: var(--card) !important; }
+[class*="to-[#0f0f16]"]   { --tw-gradient-to: var(--card-2) !important; }
+[class*="from-[#06060a]"] { --tw-gradient-from: var(--background) !important; }
+[class*="to-[#06060a]"]   { --tw-gradient-to: var(--card-2) !important; }
+
+/* ---- Survols translucides ---- */
+[class*="hover:bg-white/5"]:hover,
+[class*="hover:bg-white/10"]:hover {
+  background-color: var(--accent-soft) !important;
+}
+
+[class*="bg-white/5"] {
+  background-color: var(--accent-soft) !important;
+}
+
+/* ---- Badges et textes d'accent ---- */
+[class*="bg-cyan-500/10"],
+[class*="bg-cyan-500/20"],
+[class*="bg-purple-500/10"],
+[class*="bg-purple-500/20"] {
+  background-color: var(--accent-soft) !important;
+}
+
+[class*="border-cyan-500/30"],
+[class*="border-cyan-500/50"],
+[class*="border-purple-500/30"],
+[class*="border-purple-500/50"] {
+  border-color: var(--accent) !important;
+}
+
+/* ============================================
+   LIGHT MODE — AJUSTEMENTS
+   ============================================ */
+html.light [class*="text-white"]:not([class*="bg-accent"]):not([class*="bg-gradient"]) {
+  color: var(--foreground) !important;
+}
+
+html.light [class*="hover:text-white"]:hover {
+  color: var(--foreground) !important;
+}
+
+/* Orange plus foncé pour garder le contraste sur fond crème */
+html.light [class*="text-cyan-300"],
+html.light [class*="text-cyan-400"],
+html.light [class*="text-purple-300"],
+html.light [class*="text-purple-400"],
+html.light [class*="text-pink-300"],
+html.light [class*="text-pink-400"] {
+  color: var(--accent-strong) !important;
+}
+
+html.light [class*="text-emerald-400"] {
+  color: #059669 !important;
+}
+
+html.light ::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+html.light ::selection {
+  background: rgba(210, 80, 30, 0.2);
+  color: #1f1a17;
+}
+
+/* Logos blancs (Next.js, GitHub) → foncés en mode clair */
+html.light svg[fill="currentColor"][style*="color: rgb(255, 255, 255)"],
+html.light [style*="color: rgb(255, 255, 255)"] svg {
+  color: var(--foreground) !important;
+}
