@@ -27,7 +27,7 @@ export const projects: Project[] = [
     video: '/videos/posters/portfolio.png',
     poster: '/videos/posters/portfolio.png',
     github: 'https://github.com/mahazoasy/new_portfolio',
-    demo: 'https://portfolio-bcgf.vercel.app',
+    demo: 'https://mahazoasy-heritiana.vercel.app',
     category: 'web',
     isImage: true
   },
