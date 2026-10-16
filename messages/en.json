@@ -109,9 +109,20 @@
     "viewCode": "View code",
     "viewDemo": "View demo",
     "watchVideo": "Watch video",
+    "filters": {
+      "all": "All",
+      "web": "Web",
+      "mobile": "Mobile",
+      "api": "API"
+    },
+    "empty": "No project in this category yet.",
     "allmada": {
       "title": "AllMada — E-commerce Marketplace",
       "description": "Final-year project: design and development of a Malagasy web and mobile marketplace with an architecture close to professional e-commerce platforms. Dual administration: a platform administrator supervises the marketplace, while each seller has their own shop to manage products, orders and activities."
+    },
+    "plume-relais": {
+      "title": "Plume Relais — Collaborative Writing",
+      "description": "Mobile collaborative writing app where each participant blindly adds a paragraph to an ongoing story. At each round, multiple continuations are proposed and the community votes for the official one. A blend of exquisite corpse and writing social network, in real time."
     },
     "speaker": {
       "title": "Speaker Recognition",

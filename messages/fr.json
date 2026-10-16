@@ -109,9 +109,20 @@
     "viewCode": "Voir le code",
     "viewDemo": "Voir la démo",
     "watchVideo": "Voir la vidéo",
+    "filters": {
+      "all": "Tous",
+      "web": "Web",
+      "mobile": "Mobile",
+      "api": "API"
+    },
+    "empty": "Aucun projet dans cette catégorie pour le moment.",
     "allmada": {
       "title": "AllMada — Marketplace e-commerce",
       "description": "Projet de fin d'études : conception et développement d'une marketplace malgache Web et mobile avec une architecture proche des plateformes e-commerce professionnelles. Double administration : un administrateur de la plateforme supervise le marketplace, tandis que chaque vendeur dispose de son propre espace pour gérer ses produits, commandes et activités."
+    },
+    "plume-relais": {
+      "title": "Plume Relais — Écriture collaborative",
+      "description": "Application mobile d'écriture collaborative où chaque participant ajoute un paragraphe à un récit en cours, à l'aveugle. À chaque tour, plusieurs suites sont proposées et la communauté vote pour la suite officielle. Un mélange de cadavre exquis et de réseau social d'écriture, en temps réel."
     },
     "speaker": {
       "title": "Speaker Recognition — Reconnaissance du locuteur",

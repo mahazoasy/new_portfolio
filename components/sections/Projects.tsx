@@ -1,12 +1,12 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useRef, useState, useMemo } from 'react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight, ExternalLink, Play } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa6';
-import { projects, type Project } from '@/lib/projects';
+import { projects, type Project, type ProjectCategory } from '@/lib/projects';
 import VideoModal from '@/components/ui/VideoModal';
 import SpotlightCard from '@/components/motion/SpotlightCard';
 import { EASE } from '@/components/motion/Reveal';
@@ -14,6 +14,8 @@ import { cn } from '@/lib/utils';
 import SectionHeader from './SectionHeader';
 
 type ActiveVideo = { src: string; poster: string; title: string };
+
+type Filter = 'all' | ProjectCategory;
 
 type ProjectCardProps = {
   project: Project;
@@ -47,9 +49,9 @@ function ProjectCard({ project, index, featured = false, onWatch, t }: ProjectCa
   return (
     <motion.article
       initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.9, delay: (index % 3) * 0.1, ease: EASE }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 20 }}
+      transition={{ duration: 0.6, delay: (index % 3) * 0.08, ease: EASE }}
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
       className="h-full"
@@ -177,6 +179,19 @@ function ProjectCard({ project, index, featured = false, onWatch, t }: ProjectCa
 export default function Projects() {
   const t = useTranslations('projects');
   const [activeVideo, setActiveVideo] = useState<ActiveVideo | null>(null);
+  const [filter, setFilter] = useState<Filter>('all');
+
+  const filters: { key: Filter; label: string }[] = [
+    { key: 'all', label: t('filters.all') },
+    { key: 'web', label: t('filters.web') },
+    { key: 'mobile', label: t('filters.mobile') },
+    { key: 'api', label: t('filters.api') }
+  ];
+
+  const filtered = useMemo(
+    () => (filter === 'all' ? projects : projects.filter((p) => p.category === filter)),
+    [filter]
+  );
 
   return (
     <>
@@ -184,19 +199,51 @@ export default function Projects() {
         <div className="mx-auto max-w-7xl">
           <SectionHeader eyebrow={t('subtitle')} title={t('title')} />
 
-          <div className="mt-16 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {projects.map((project, index) => (
-              <div key={project.slug} className={cn(index === 0 && 'md:col-span-2 lg:col-span-3')}>
-                <ProjectCard
-                  project={project}
-                  index={index}
-                  featured={index === 0}
-                  onWatch={setActiveVideo}
-                  t={t}
-                />
-              </div>
+          {/* Filtres */}
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-2">
+            {filters.map(({ key, label }) => (
+              <button
+                key={key}
+                type="button"
+                onClick={() => setFilter(key)}
+                className={cn(
+                  'rounded-full border px-4 py-2 text-sm font-medium transition-colors',
+                  filter === key
+                    ? 'border-accent bg-accent text-on-accent'
+                    : 'border-border bg-card text-muted hover:border-border-strong hover:text-foreground'
+                )}
+              >
+                {label}
+              </button>
             ))}
           </div>
+
+          {/* Grille de projets filtrés */}
+          {filtered.length === 0 ? (
+            <p className="mt-16 text-center text-muted">{t('empty')}</p>
+          ) : (
+            <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              <AnimatePresence mode="popLayout">
+                {filtered.map((project, index) => (
+                  <motion.div
+                    key={project.slug}
+                    layout
+                    className={cn(
+                      filter === 'all' && index === 0 && 'md:col-span-2 lg:col-span-3'
+                    )}
+                  >
+                    <ProjectCard
+                      project={project}
+                      index={index}
+                      featured={filter === 'all' && index === 0}
+                      onWatch={setActiveVideo}
+                      t={t}
+                    />
+                  </motion.div>
+                ))}
+              </AnimatePresence>
+            </div>
+          )}
         </div>
       </section>
 

@@ -1,3 +1,5 @@
+export type ProjectCategory = 'web' | 'mobile' | 'api';
+
 export type Project = {
   slug: string;
   stack: string[];
@@ -5,6 +7,7 @@ export type Project = {
   poster: string;
   github: string;
   demo: string;
+  category: ProjectCategory;
 };
 
 export const projects: Project[] = [
@@ -14,7 +17,17 @@ export const projects: Project[] = [
     video: '/videos/allmada.mp4',
     poster: '/videos/posters/allmada.webp',
     github: 'https://github.com/mahazoasy/AllMada_Web.git',
-    demo: ''
+    demo: '',
+    category: 'web'
+  },
+  {
+    slug: 'plume-relais',
+    stack: ['React Native', 'Expo', 'Supabase', 'TypeScript'],
+    video: '/videos/plume-relais.mp4',
+    poster: '/videos/posters/plume-relais.webp',
+    github: 'https://github.com/mahazoasy',
+    demo: '',
+    category: 'mobile'
   },
   {
     slug: 'speaker',
@@ -22,7 +35,8 @@ export const projects: Project[] = [
     video: '/videos/speaker.mp4',
     poster: '/videos/posters/speaker.png',
     github: 'https://github.com/mahazoasy',
-    demo: ''
+    demo: '',
+    category: 'api'
   },
   {
     slug: 'ocr',
@@ -30,7 +44,8 @@ export const projects: Project[] = [
     video: '/videos/ocr.mp4',
     poster: '/videos/posters/ocr.png',
     github: 'https://github.com/mahazoasy',
-    demo: ''
+    demo: '',
+    category: 'web'
   },
   {
     slug: 'bible',
@@ -38,6 +53,7 @@ export const projects: Project[] = [
     video: '/videos/bible.mp4',
     poster: '/videos/posters/bible.webp',
     github: 'https://github.com/mahazoasy',
-    demo: ''
+    demo: '',
+    category: 'mobile'
   }
 ];
