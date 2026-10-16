@@ -41,24 +41,6 @@ export const projects: Project[] = [
     category: 'mobile'
   },
   {
-    slug: 'speaker',
-    stack: ['Python', 'PyTorch', 'SpeechBrain', 'ECAPA-TDNN'],
-    video: '/videos/speaker.mp4',
-    poster: '/videos/posters/speaker.png',
-    github: 'https://github.com/mahazoasy/speaker_recognition_app.git',
-    demo: '',
-    category: 'api'
-  },
-  {
-    slug: 'ocr',
-    stack: ['Angular', 'NestJS', 'Python', 'KNN', 'Chart.js'],
-    video: '/videos/ocr.mp4',
-    poster: '/videos/posters/ocr.png',
-    github: 'https://github.com/mahazoasy',
-    demo: '',
-    category: 'web'
-  },
-  {
     slug: 'bible',
     stack: ['React Native', 'Expo', 'TypeScript', 'Supabase'],
     video: '/videos/bible.mp4',
@@ -67,4 +49,23 @@ export const projects: Project[] = [
     demo: '',
     category: 'mobile'
   }
+  // 💤 Projets temporairement désactivés (à réactiver plus tard)
+  // {
+  //   slug: 'speaker',
+  //   stack: ['Python', 'PyTorch', 'SpeechBrain', 'ECAPA-TDNN'],
+  //   video: '/videos/speaker.mp4',
+  //   poster: '/videos/posters/speaker.png',
+  //   github: 'https://github.com/mahazoasy/speaker_recognition_app.git',
+  //   demo: '',
+  //   category: 'api'
+  // },
+  // {
+  //   slug: 'ocr',
+  //   stack: ['Angular', 'NestJS', 'Python', 'KNN', 'Chart.js'],
+  //   video: '/videos/ocr.mp4',
+  //   poster: '/videos/posters/ocr.png',
+  //   github: 'https://github.com/mahazoasy',
+  //   demo: '',
+  //   category: 'web'
+  // }
 ];

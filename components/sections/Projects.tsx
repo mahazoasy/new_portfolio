@@ -15,7 +15,7 @@ import SectionHeader from './SectionHeader';
 
 type ActiveVideo = { src: string; poster: string; title: string };
 
-type Filter = 'all' | ProjectCategory;
+type Filter = 'all' | 'web' | 'mobile';
 
 type ProjectCardProps = {
   project: Project;
@@ -198,8 +198,7 @@ export default function Projects() {
   const filters: { key: Filter; label: string }[] = [
     { key: 'all', label: t('filters.all') },
     { key: 'web', label: t('filters.web') },
-    { key: 'mobile', label: t('filters.mobile') },
-    { key: 'api', label: t('filters.api') }
+    { key: 'mobile', label: t('filters.mobile') }
   ];
 
   const filtered = useMemo(
