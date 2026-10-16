@@ -15,7 +15,7 @@ export default function Education() {
         <SectionHeader eyebrow={t('subtitle')} title={t('title')} />
 
         <Reveal delay={0.1} className="mt-16">
-          <SpotlightCard className="p-8 md:p-14" size={600}>
+          <SpotlightCard className="p-8 md:p-14">
             <div
               aria-hidden
               className="absolute inset-x-12 top-0 h-px bg-gradient-to-r from-transparent via-accent to-transparent"
