@@ -45,7 +45,7 @@ export default function About() {
   const stats = [
     { icon: Rocket, value: '10+', label: t('stats.projects') },
     { icon: Code2, value: '16+', label: t('stats.tech') },
-    { icon: Globe2, value: '2', label: t('stats.languages') },
+    { icon: Globe2, value: '3', label: t('stats.languages') },
     { icon: GraduationCap, value: '2026', label: t('stats.graduated') }
   ];
 
