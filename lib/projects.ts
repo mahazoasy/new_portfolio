@@ -41,6 +41,15 @@ export const projects: Project[] = [
     category: 'mobile'
   },
   {
+    slug: 'invisible-queue',
+    stack: ['React Native', 'Expo', 'Supabase', 'TypeScript', 'Geolocation'],
+    video: '/videos/invisible-queue.mp4',
+    poster: '/videos/posters/invisible-queue.webp',
+    github: 'https://github.com/mahazoasy/InvisibleQueue.git',
+    demo: '',
+    category: 'mobile'
+  },
+  {
     slug: 'bible',
     stack: ['React Native', 'Expo', 'TypeScript', 'Supabase'],
     video: '/videos/bible.mp4',
@@ -49,7 +58,7 @@ export const projects: Project[] = [
     demo: '',
     category: 'mobile'
   }
-  // 💤 Projets temporairement désactivés (à réactiver plus tard)
+  // 💤 Projets temporairement désactivés
   // {
   //   slug: 'speaker',
   //   stack: ['Python', 'PyTorch', 'SpeechBrain', 'ECAPA-TDNN'],

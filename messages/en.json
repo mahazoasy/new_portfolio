@@ -139,6 +139,10 @@
     "portfolio": {
     "title": "Personal Portfolio — Next.js",
     "description": "Bilingual (FR/EN) portfolio designed and built with Next.js 16, TypeScript, Tailwind CSS 4 and Framer Motion. Smooth animations, contact form via Resend, automatic deployment on Vercel. Modern, responsive and SEO-optimized design."
+    },
+    "invisible-queue": {
+    "title": "Invisible Queue — Virtual Waiting Lines",
+    "description": "Mobile app that digitizes physical waiting lines. Users join a nearby queue, track their real-time position and get notified as their turn approaches. Supabase for authentication and real-time sync, guest or logged-in mode, delay and turn management, mandatory geolocation."
   }
   },
   "experience": {
