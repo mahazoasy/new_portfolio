@@ -2,7 +2,7 @@
 
 import { useLocale } from 'next-intl';
 import { usePathname, useRouter } from 'next/navigation';
-import { useEffect, useTransition } from 'react';
+import { useEffect, useState } from 'react';
 
 function FlagFR({ className = 'w-5 h-3.5' }: { className?: string }) {
   return (
@@ -38,37 +38,47 @@ export default function LanguageSwitcher() {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
-  const [isPending, startTransition] = useTransition();
+  const [isSwitching, setIsSwitching] = useState(false);
 
-  // Précharge les deux locales au montage
+  // Précharge les deux locales avec les chemins actuels
   useEffect(() => {
-    router.prefetch('/fr');
-    router.prefetch('/en');
-  }, [router]);
+    const otherLocale = locale === 'fr' ? 'en' : 'fr';
+    const segments = pathname.split('/');
+    segments[1] = otherLocale;
+    const otherPath = segments.join('/') || `/${otherLocale}`;
+    router.prefetch(otherPath);
+  }, [locale, pathname, router]);
 
   const switchLocale = (next: string) => {
-    if (next === locale) return;
+    if (next === locale || isSwitching) return;
+
+    setIsSwitching(true);
+
     const segments = pathname.split('/');
     segments[1] = next;
     const newPath = segments.join('/') || `/${next}`;
 
-    startTransition(() => {
-      // scroll: false ne saute pas en haut de la page
-      router.replace(newPath, { scroll: false });
-    });
+    // Préserve le hash (#projects, #contact, etc.)
+    const hash = typeof window !== 'undefined' ? window.location.hash : '';
+    const fullPath = hash ? `${newPath}${hash}` : newPath;
+
+    router.replace(fullPath, { scroll: false });
+
+    // Reset l'état après un court délai
+    setTimeout(() => setIsSwitching(false), 300);
   };
 
   const baseBtn =
     'flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-300 cursor-pointer hover:scale-105 disabled:cursor-wait disabled:opacity-70';
   const active =
-    'bg-cyan-500/20 text-white border border-cyan-500/50 shadow-[0_0_15px_rgba(34,211,238,0.3)]';
-  const inactive = 'text-gray-400 hover:text-white border border-transparent';
+    'bg-accent/20 text-foreground border border-accent/50 shadow-[0_0_15px_var(--accent-soft)]';
+  const inactive = 'text-muted hover:text-foreground border border-transparent';
 
   return (
-    <div className="inline-flex items-center gap-1 rounded-full border border-[#1f1f2e] bg-[#0f0f16]/80 backdrop-blur p-1">
+    <div className="inline-flex items-center gap-1 rounded-full border border-border bg-card/80 backdrop-blur p-1">
       <button
         onClick={() => switchLocale('fr')}
-        disabled={isPending}
+        disabled={isSwitching}
         aria-label="Français"
         className={`${baseBtn} ${locale === 'fr' ? active : inactive}`}
       >
@@ -77,7 +87,7 @@ export default function LanguageSwitcher() {
       </button>
       <button
         onClick={() => switchLocale('en')}
-        disabled={isPending}
+        disabled={isSwitching}
         aria-label="English"
         className={`${baseBtn} ${locale === 'en' ? active : inactive}`}
       >
