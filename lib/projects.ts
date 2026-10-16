@@ -25,7 +25,7 @@ export const projects: Project[] = [
     stack: ['React Native', 'Expo', 'Supabase', 'TypeScript'],
     video: '/videos/plume-relais.mp4',
     poster: '/videos/posters/plume-relais.webp',
-    github: 'https://github.com/mahazoasy',
+    github: 'https://github.com/mahazoasy/plume-relais-autre.git',
     demo: '',
     category: 'mobile'
   },
