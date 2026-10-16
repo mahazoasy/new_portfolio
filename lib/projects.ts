@@ -34,7 +34,7 @@ export const projects: Project[] = [
     stack: ['Python', 'PyTorch', 'SpeechBrain', 'ECAPA-TDNN'],
     video: '/videos/speaker.mp4',
     poster: '/videos/posters/speaker.png',
-    github: 'https://github.com/mahazoasy',
+    github: 'https://github.com/mahazoasy/speaker_recognition_app.git',
     demo: '',
     category: 'api'
   },
@@ -55,5 +55,14 @@ export const projects: Project[] = [
     github: 'https://github.com/mahazoasy',
     demo: '',
     category: 'mobile'
-  }
+  },
+  {
+  slug: 'portfolio',
+  stack: ['Next.js', 'TypeScript', 'Tailwind', 'Framer Motion', 'Vercel'],
+  video: '/videos/portfolio.mp4',
+  poster: '/videos/posters/portfolio.webp',
+  github: 'https://github.com/mahazoasy/new_portfolio',
+  demo: 'https://mahazoasy-heritiana.vercel.app',
+  category: 'web'
+},
 ];

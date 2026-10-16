@@ -135,7 +135,11 @@
     "bible": {
       "title": "Bible Mobile App",
       "description": "Mobile app with navigation, multilingual support and backend services integration."
-    }
+    },
+    "portfolio": {
+    "title": "Personal Portfolio — Next.js",
+    "description": "Bilingual (FR/EN) portfolio designed and built with Next.js 16, TypeScript, Tailwind CSS 4 and Framer Motion. Smooth animations, contact form via Resend, automatic deployment on Vercel. Modern, responsive and SEO-optimized design."
+  }
   },
   "experience": {
     "title": "Practical experience",
