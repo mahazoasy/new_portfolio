@@ -1,60 +1,52 @@
 @import "tailwindcss";
 
 /* ============================================
-   PALETTE ORANGE (inspirée de ainaenfance.org)
-   Toutes les anciennes familles cyan / purple / pink
-   pointent vers le même orange : plus d'arc-en-ciel.
-   ============================================ */
-@theme {
-  --color-cyan-300: #f4a37b;
-  --color-cyan-400: #e8662f;
-  --color-cyan-500: #d2501e;
-  --color-cyan-600: #b8431a;
-
-  --color-purple-300: #f4a37b;
-  --color-purple-400: #e8662f;
-  --color-purple-500: #d2501e;
-  --color-purple-600: #b8431a;
-
-  --color-pink-300: #f4a37b;
-  --color-pink-400: #e8662f;
-  --color-pink-500: #d2501e;
-  --color-pink-600: #b8431a;
-}
-
-/* ============================================
-   VARIABLES PAR DÉFAUT (DARK MODE)
+   DESIGN TOKENS — DARK (par défaut)
+   Neutres façon Apple + accent orange de la marque
    ============================================ */
 :root {
-  --background: #14100d;
-  --foreground: #f5ede3;
-  --muted: #a89a8b;
-  --faint: #7d7064;
-  --card: #1e1814;
-  --card-2: #271f19;
-  --border: #33281f;
-  --accent: #e8662f;
-  --accent-strong: #d2501e;
-  --accent-soft: rgba(232, 102, 47, 0.12);
+  --background: #0a0a0b;
+  --foreground: #f5f5f7;
+  --muted: #a1a1aa;
+  --faint: #6b6b74;
+  --card: #111113;
+  --card-2: #18181b;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --accent: #f26b2e;
+  --accent-strong: #e0561a;
+  --accent-soft: rgba(242, 107, 46, 0.12);
+  --on-accent: #ffffff;
+  --spotlight: rgba(242, 107, 46, 0.14);
+  --success: #34d399;
+  --danger: #f87171;
 }
 
 /* ============================================
-   LIGHT MODE — VARIABLES (fond crème)
+   DESIGN TOKENS — LIGHT
    ============================================ */
 html.light {
-  --background: #fff8e7;
-  --foreground: #1f1a17;
-  --muted: #6b5b4e;
-  --faint: #9a8a7c;
+  --background: #fbfbfd;
+  --foreground: #1d1d1f;
+  --muted: #6e6e73;
+  --faint: #a1a1a6;
   --card: #ffffff;
-  --card-2: #fdf0d5;
-  --border: #f0dfc0;
-  --accent: #d2501e;
-  --accent-strong: #b8431a;
-  --accent-soft: #fdebd6;
+  --card-2: #f5f5f7;
+  --border: rgba(0, 0, 0, 0.08);
+  --border-strong: rgba(0, 0, 0, 0.16);
+  --accent: #e2571c;
+  --accent-strong: #c2410c;
+  --accent-soft: #fff1e8;
+  --on-accent: #ffffff;
+  --spotlight: rgba(226, 87, 28, 0.1);
+  --success: #059669;
+  --danger: #dc2626;
 }
 
 @theme inline {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
@@ -62,16 +54,50 @@ html.light {
   --color-card: var(--card);
   --color-card-2: var(--card-2);
   --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
   --color-accent: var(--accent);
   --color-accent-strong: var(--accent-strong);
   --color-accent-soft: var(--accent-soft);
+  --color-on-accent: var(--on-accent);
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-marquee-reverse: marquee 48s linear infinite reverse;
+  --animate-scroll-dot: scroll-dot 1.8s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+/* Les anciennes familles cyan / purple / pink pointent vers l'accent (Navbar, Footer…) */
+@theme {
+  --color-cyan-300: #f4a37b;
+  --color-cyan-400: #f26b2e;
+  --color-cyan-500: #e0561a;
+  --color-cyan-600: #c2410c;
+  --color-purple-300: #f4a37b;
+  --color-purple-400: #f26b2e;
+  --color-purple-500: #e0561a;
+  --color-purple-600: #c2410c;
+  --color-pink-300: #f4a37b;
+  --color-pink-400: #f26b2e;
+  --color-pink-500: #e0561a;
+  --color-pink-600: #c2410c;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes scroll-dot {
+  0% { transform: translateY(0); opacity: 0; }
+  30% { opacity: 1; }
+  100% { transform: translateY(14px); opacity: 0; }
 }
 
 * {
   box-sizing: border-box;
 }
 
-/* Défilement fluide uniquement pour les ancres internes */
 html:has(:target) {
   scroll-behavior: smooth;
 }
@@ -79,8 +105,9 @@ html:has(:target) {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -89,52 +116,52 @@ section {
   scroll-margin-top: 80px;
 }
 
-/* ---------- Texte "gradient" → couleur unie ---------- */
-.gradient-text {
-  background: none;
-  -webkit-background-clip: border-box;
-  background-clip: border-box;
-  color: var(--accent);
-  animation: none;
+/* ---------- Utilitaires ---------- */
+@utility text-gradient {
+  background-image: linear-gradient(
+    180deg,
+    var(--foreground) 35%,
+    color-mix(in oklab, var(--foreground) 55%, transparent)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-/* ---------- Cartes (sans mouvement) ---------- */
-.glow {
-  box-shadow: none;
+@utility text-gradient-accent {
+  background-image: linear-gradient(120deg, var(--accent) 0%, #ff9a5a 50%, var(--accent-strong) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility mask-fade-x {
+  mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+}
+
+@utility mask-radial {
+  mask-image: radial-gradient(ellipse at center, #000 20%, transparent 70%);
+}
+
+@utility bg-grid {
+  background-image:
+    linear-gradient(to right, var(--border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+/* Rétro-compatibilité (Navbar / Footer) */
+.gradient-text {
+  color: var(--accent);
 }
 
 .card-hover {
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card-hover:hover {
-  transform: none;
-  border-color: var(--accent);
-  box-shadow: 0 6px 20px rgba(210, 80, 30, 0.12);
-}
-
-/* ---------- Anciens effets : désactivés ---------- */
-.grid-bg {
-  display: none;
-}
-
-.animate-blob,
-.animate-marquee,
-.animate-spin-slow,
-.animate-spin-reverse,
-.animate-float,
-.animate-bounce-y,
-.cursor-blink,
-.shimmer-border {
-  animation: none !important;
-}
-
-.shimmer-border {
-  background: var(--accent);
-}
-
-.gradient-ring {
-  background: var(--accent);
+  border-color: var(--border-strong);
+  box-shadow: 0 10px 40px -12px rgba(0, 0, 0, 0.25);
 }
 
 /* ---------- Scrollbar ---------- */
@@ -147,29 +174,35 @@ section {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--accent);
-  border-radius: 5px;
+  background: var(--border-strong);
+  border-radius: 999px;
+  border: 2px solid var(--background);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-strong);
+  background: var(--accent);
 }
 
-/* ---------- Sélection ---------- */
 ::selection {
-  background: rgba(210, 80, 30, 0.25);
+  background: var(--accent-soft);
   color: var(--foreground);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-marquee-reverse,
+  .animate-scroll-dot {
+    animation: none !important;
+  }
 }
 
 /* ============================================
    REMAPPAGE DES CLASSES CODÉES EN DUR
-   (valable en dark ET en light, via variables)
+   (utilisé par Navbar, Footer, VideoModal…)
    ============================================ */
-
-/* ---- Fonds ---- */
 [class*="bg-[#06060a]"],
 [class*="bg-[#0a0a0f]"] {
-  background-color: var(--background) !important;
+  background-color: color-mix(in oklab, var(--background) 80%, transparent) !important;
 }
 
 [class*="bg-[#0f0f16]"],
@@ -183,13 +216,11 @@ section {
   background-color: var(--card-2) !important;
 }
 
-/* ---- Bordures ---- */
 [class*="border-[#1f1f2e]"],
 [class*="border-[#262633]"] {
   border-color: var(--border) !important;
 }
 
-/* ---- Textes gris ---- */
 [class*="text-gray-100"],
 [class*="text-gray-200"] { color: var(--foreground) !important; }
 
@@ -199,13 +230,6 @@ section {
 
 [class*="text-gray-600"] { color: var(--faint) !important; }
 
-/* ---- Gradients de fond ---- */
-[class*="from-[#0f0f16]"] { --tw-gradient-from: var(--card) !important; }
-[class*="to-[#0f0f16]"]   { --tw-gradient-to: var(--card-2) !important; }
-[class*="from-[#06060a]"] { --tw-gradient-from: var(--background) !important; }
-[class*="to-[#06060a]"]   { --tw-gradient-to: var(--card-2) !important; }
-
-/* ---- Survols translucides ---- */
 [class*="hover:bg-white/5"]:hover,
 [class*="hover:bg-white/10"]:hover {
   background-color: var(--accent-soft) !important;
@@ -215,25 +239,7 @@ section {
   background-color: var(--accent-soft) !important;
 }
 
-/* ---- Badges et textes d'accent ---- */
-[class*="bg-cyan-500/10"],
-[class*="bg-cyan-500/20"],
-[class*="bg-purple-500/10"],
-[class*="bg-purple-500/20"] {
-  background-color: var(--accent-soft) !important;
-}
-
-[class*="border-cyan-500/30"],
-[class*="border-cyan-500/50"],
-[class*="border-purple-500/30"],
-[class*="border-purple-500/50"] {
-  border-color: var(--accent) !important;
-}
-
-/* ============================================
-   LIGHT MODE — AJUSTEMENTS
-   ============================================ */
-html.light [class*="text-white"]:not([class*="bg-accent"]):not([class*="bg-gradient"]) {
+html.light [class*="text-white"]:not([class*="bg-accent"]):not([class*="bg-gradient"]):not([class*="bg-black"]) {
   color: var(--foreground) !important;
 }
 
@@ -241,31 +247,9 @@ html.light [class*="hover:text-white"]:hover {
   color: var(--foreground) !important;
 }
 
-/* Orange plus foncé pour garder le contraste sur fond crème */
 html.light [class*="text-cyan-300"],
 html.light [class*="text-cyan-400"],
 html.light [class*="text-purple-300"],
-html.light [class*="text-purple-400"],
-html.light [class*="text-pink-300"],
-html.light [class*="text-pink-400"] {
+html.light [class*="text-purple-400"] {
   color: var(--accent-strong) !important;
-}
-
-html.light [class*="text-emerald-400"] {
-  color: #059669 !important;
-}
-
-html.light ::-webkit-scrollbar-track {
-  background: var(--background);
-}
-
-html.light ::selection {
-  background: rgba(210, 80, 30, 0.2);
-  color: #1f1a17;
-}
-
-/* Logos blancs (Next.js, GitHub) → foncés en mode clair */
-html.light svg[fill="currentColor"][style*="color: rgb(255, 255, 255)"],
-html.light [style*="color: rgb(255, 255, 255)"] svg {
-  color: var(--foreground) !important;
 }

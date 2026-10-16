@@ -3,6 +3,7 @@
     "home": "Accueil",
     "about": "À propos",
     "skills": "Compétences",
+    "services": "Services",
     "projects": "Projets",
     "experience": "Expérience",
     "education": "Formation",
@@ -11,15 +12,19 @@
   "hero": {
     "greeting": "Bonjour, je suis",
     "name": "Mahazoasy Heritiana Judicaël",
-    "title": "Développeur Web Junior | Full-Stack",
+    "title": "Développeur Web & Mobile Full-Stack",
     "roles": [
       "Développeur Full-Stack",
       "Développeur Web & Mobile",
-      "Passionné d'IA & Data",
-      "Étudiant en Génie Logiciel"
+      "Passionné d'IA & Data"
     ],
+    "pitch": "Je conçois des sites vitrines professionnels, des applications web rapides et des applications mobiles React Native — du frontend au backend, jusqu'au déploiement.",
     "location": "Toamasina, Madagascar",
-    "availability": "Ouvert aux opportunités",
+    "locationShort": "Madagascar",
+    "availability": "Disponible pour missions & projets",
+    "trust1": "Réponse sous 24h",
+    "trust2": "À distance, dans le monde entier",
+    "trust3": "Français · Anglais · Malgache",
     "ctaProjects": "Voir mes projets",
     "ctaCv": "Télécharger mon CV",
     "ctaContact": "Me contacter",
@@ -29,13 +34,60 @@
     "title": "À propos",
     "subtitle": "Qui suis-je",
     "based": "Basé à",
-    "text1": "Développeur Web junior récemment diplômé en Informatique, parcours Génie Logiciel. Je conçois des applications Web et mobiles modernes et possède une expérience pratique en frontend, backend, bases de données, API REST, conception UI/UX et conteneurisation.",
-    "text2": "Curieux, autonome et passionné par les nouvelles technologies, je recherche une opportunité professionnelle pour contribuer à des projets concrets et continuer à progresser.",
+    "text1": "Développeur web et mobile full-stack, récemment diplômé en Informatique (Génie Logiciel) à l'Université Adventiste Zurcher. Je conçois des applications web et mobiles modernes avec React, Next.js, Node.js et TypeScript.",
+    "text2": "Mon projet de fin d'études, AllMada, est une marketplace e-commerce malgache composée d'une application web, d'une application mobile et d'un backend commun. J'ai travaillé sur les APIs REST, l'authentification JWT, la gestion multi-rôles (admin, vendeurs, clients), les boutiques, produits, commandes et paiements, ainsi que sur MongoDB, Docker et Git/GitHub.",
+    "text3": "Ce que je vous apporte : un code propre et lisible, une communication claire, des livraisons dans les délais, et un vrai souci du détail pour que votre projet fonctionne dès le premier jour.",
+    "p1title": "Code propre",
+    "p1desc": "Un code lisible, testé et orienté objet, prêt à évoluer avec votre projet.",
+    "p2title": "Cycle complet",
+    "p2desc": "De la conception à la mise en ligne : maquette, développement, tests, déploiement.",
+    "p3title": "À l'écoute",
+    "p3desc": "Votre satisfaction et la réussite de votre projet sont mes priorités.",
+    "infoTitle": "Informations pratiques",
+    "infoLocation": "Lieu",
+    "infoLocationValue": "Toamasina, Madagascar",
+    "infoEducation": "Formation",
+    "infoEducationValue": "Licence en informatique, Université Adventiste Zurcher, 2023 – 2026",
+    "infoLanguages": "Langues",
+    "infoLanguagesValue": "Malgache (langue maternelle), français (courant), anglais (intermédiaire)",
+    "infoAvailability": "Disponibilité",
+    "infoAvailabilityValue": "Disponible pour missions, stages et projets freelance",
     "stats": {
       "projects": "Projets réalisés",
       "tech": "Technologies",
       "languages": "Langues",
       "graduated": "Diplômé"
+    }
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "Ce que je peux construire pour vous",
+    "intro": "De l'idée à la mise en ligne — des sites, applications et outils sur mesure.",
+    "ctaTitle": "Un projet en tête ? Parlons-en.",
+    "ctaButton": "Demander un devis",
+    "web": {
+      "title": "Sites & applications web",
+      "desc": "Interfaces rapides et accessibles avec React et Next.js, connectées à une API Node.js et à une base de données MongoDB ou SQL."
+    },
+    "mobile": {
+      "title": "Applications mobiles",
+      "desc": "Applications Android et iOS avec React Native et Expo : navigation fluide, synchronisation en temps réel, notifications."
+    },
+    "backend": {
+      "title": "API & back-end",
+      "desc": "APIs REST documentées et sécurisées (JWT, Swagger), bases de données relationnelles ou NoSQL, webhooks et intégrations tierces."
+    },
+    "tools": {
+      "title": "Outils de gestion sur mesure",
+      "desc": "Stocks, ventes, réservations, rôles utilisateurs : des applications métier adaptées à votre activité (hôtel, boutique, ONG…)."
+    },
+    "ai": {
+      "title": "Fonctionnalités d'IA",
+      "desc": "Recommandation, classification, traitement d'images ou de voix : ajoutez de l'intelligence à votre produit."
+    },
+    "perf": {
+      "title": "Optimisation des performances",
+      "desc": "Requêtes, taille du bundle, temps de chargement : des audits et optimisations ciblées pour accélérer votre application."
     }
   },
   "skills": {
@@ -51,29 +103,29 @@
     "methods": "Méthodes",
     "alsoUsed": "Également utilisés"
   },
-    "projects": {
+  "projects": {
     "title": "Projets principaux",
     "subtitle": "Mes réalisations",
     "viewCode": "Voir le code",
     "viewDemo": "Voir la démo",
     "watchVideo": "Voir la vidéo",
     "allmada": {
-        "title": "AllMada — Marketplace e-commerce",
-        "description": "Projet de fin d'études : conception et développement d'une marketplace malgache Web et mobile avec une architecture proche des plateformes e-commerce professionnelles. Double administration : un administrateur de la plateforme supervise le marketplace, tandis que chaque vendeur dispose de son propre espace pour gérer ses produits, commandes et activités."
+      "title": "AllMada — Marketplace e-commerce",
+      "description": "Projet de fin d'études : conception et développement d'une marketplace malgache Web et mobile avec une architecture proche des plateformes e-commerce professionnelles. Double administration : un administrateur de la plateforme supervise le marketplace, tandis que chaque vendeur dispose de son propre espace pour gérer ses produits, commandes et activités."
     },
     "speaker": {
-        "title": "Speaker Recognition — Reconnaissance du locuteur",
-        "description": "Prototype d'intelligence artificielle permettant de distinguer la voix de l'utilisateur de celle d'une autre personne à partir d'empreintes vocales."
+      "title": "Speaker Recognition — Reconnaissance du locuteur",
+      "description": "Prototype d'intelligence artificielle permettant de distinguer la voix de l'utilisateur de celle d'une autre personne à partir d'empreintes vocales."
     },
     "ocr": {
-        "title": "Application OCR pour examens",
-        "description": "Application de traitement d'images et d'aide à la correction avec classification KNN, visualisation des résultats et génération de documents."
+      "title": "Application OCR pour examens",
+      "description": "Application de traitement d'images et d'aide à la correction avec classification KNN, visualisation des résultats et génération de documents."
     },
     "bible": {
-        "title": "Application mobile Bible",
-        "description": "Application mobile avec navigation, gestion multilingue et intégration de services backend."
+      "title": "Application mobile Bible",
+      "description": "Application mobile avec navigation, gestion multilingue et intégration de services backend."
     }
-    },
+  },
   "experience": {
     "title": "Expérience pratique",
     "subtitle": "Ce que je sais faire",
@@ -92,7 +144,7 @@
     "subtitle": "Mon parcours académique",
     "degree": "Licence en Informatique — Parcours Génie Logiciel",
     "school": "Université Adventiste Zurcher (UAZ), Sambaina / Antsirabe",
-    "date": "Diplômé le 2 août 2026"
+    "date": "Diplômé en 2026"
   },
   "softskills": {
     "title": "Atouts",
@@ -120,7 +172,7 @@
   },
   "contact": {
     "title": "Contact",
-    "subtitle": "Une opportunité à me proposer ? Écrivez-moi.",
+    "subtitle": "Un projet en tête ? Parlons-en.",
     "name": "Nom",
     "email": "Email",
     "message": "Message",

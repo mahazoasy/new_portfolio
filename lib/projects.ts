@@ -20,7 +20,7 @@ export const projects: Project[] = [
     slug: 'speaker',
     stack: ['Python', 'PyTorch', 'SpeechBrain', 'ECAPA-TDNN'],
     video: '/videos/speaker.mp4',
-    poster: '/videos/posters/speaker.webp',
+    poster: '/videos/posters/speaker.png',
     github: 'https://github.com/mahazoasy',
     demo: ''
   },
@@ -28,7 +28,7 @@ export const projects: Project[] = [
     slug: 'ocr',
     stack: ['Angular', 'NestJS', 'Python', 'KNN', 'Chart.js'],
     video: '/videos/ocr.mp4',
-    poster: '/videos/posters/ocr.webp',
+    poster: '/videos/posters/ocr.png',
     github: 'https://github.com/mahazoasy',
     demo: ''
   },

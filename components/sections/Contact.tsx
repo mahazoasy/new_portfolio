@@ -1,20 +1,31 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, type FormEvent } from 'react';
 import { useTranslations } from 'next-intl';
-import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
-import { FaGithub } from 'react-icons/fa6';
+import { motion, AnimatePresence } from 'framer-motion';
+import {
+  AlertCircle, ArrowUpRight, CheckCircle2, Loader2, Mail, MapPin, Phone, Send
+} from 'lucide-react';
+import { FaGithub, FaLinkedin } from 'react-icons/fa6';
+import Reveal, { EASE } from '@/components/motion/Reveal';
+
+type Status = 'idle' | 'sending' | 'success' | 'error';
+
+const fieldClass =
+  'peer w-full rounded-2xl border border-border bg-card-2 px-4 pb-3 pt-6 text-foreground outline-none transition-[border-color,box-shadow,background-color] duration-300 placeholder:text-transparent hover:border-border-strong focus:border-accent focus:bg-card focus:shadow-[0_0_0_4px_var(--accent-soft)]';
+
+const labelClass =
+  'pointer-events-none absolute left-4 top-2 text-xs text-muted transition-all duration-200 peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-xs peer-focus:text-accent';
 
 export default function Contact() {
   const t = useTranslations('contact');
-  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [status, setStatus] = useState<Status>('idle');
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     setStatus('sending');
 
-    const form = e.currentTarget;
+    const form = event.currentTarget;
     const formData = new FormData(form);
     const data = {
       name: formData.get('name'),
@@ -28,138 +39,168 @@ export default function Contact() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
       });
-      if (!res.ok) throw new Error();
+      if (!res.ok) throw new Error('Request failed');
       setStatus('success');
       form.reset();
-      setTimeout(() => setStatus('idle'), 6000);
     } catch {
       setStatus('error');
+    } finally {
       setTimeout(() => setStatus('idle'), 6000);
     }
   };
 
+  const channels = [
+    {
+      href: 'mailto:mahazoasyheritiana@gmail.com',
+      icon: Mail,
+      label: 'Email',
+      value: 'mahazoasyheritiana@gmail.com'
+    },
+    {
+      href: 'tel:+261380836502',
+      icon: Phone,
+      label: t('phone'),
+      value: '+261 33 66 030 90'
+    },
+    {
+      href: 'https://github.com/mahazoasy',
+      icon: FaGithub,
+      label: t('github'),
+      value: 'github.com/mahazoasy',
+      external: true
+    },
+    {
+      href: 'https://www.linkedin.com/in/mahazoasy-judicael',
+      icon: FaLinkedin,
+      label: 'LinkedIn',
+      value: 'linkedin.com/in/mahazoasy-judicael',
+      external: true
+    }
+  ];
+
   return (
-    <section id="contact" className="py-24 px-10 bg-[#0d0d14]">
-      <div className="max-w-4xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold mb-3">
-            <span className="gradient-text">{t('title')}</span>
-          </h2>
-          <p className="text-gray-400">{t('subtitle')}</p>
-        </motion.div>
+    <section id="contact" className="relative px-6 py-28 md:px-10 md:py-36">
+      <div className="mx-auto max-w-7xl">
+        <Reveal>
+          <div className="relative isolate overflow-hidden rounded-[2.5rem] border border-border bg-card p-6 md:p-12 lg:p-16">
+            <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+              <div className="flex flex-col">
+                <p className="inline-flex items-center gap-2.5 text-xs font-medium uppercase tracking-[0.22em] text-accent">
+                  <span aria-hidden className="h-px w-6 bg-accent" />
+                  {t('title')}
+                </p>
+                <h2 className="mt-4 text-4xl font-semibold leading-[1.05] tracking-[-0.035em] text-balance text-gradient md:text-6xl">
+                  {t('subtitle')}
+                </h2>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="space-y-4"
-          >
-            <a
-              href="mailto:mahazoasyheritiana@gmail.com "
-              className="flex items-center gap-4 bg-[#14141c] border border-[#262633] rounded-xl p-4 card-hover"
-            >
-              <Mail className="text-cyan-400" />
-              <div>
-                <p className="text-xs text-gray-500">Email</p>
-                <p className="text-gray-200 text-sm">	mahazoasyheritiana@gmail.com</p>
+                <ul className="mt-10 divide-y divide-border border-y border-border">
+                  {channels.map(({ href, icon: Icon, label, value, external }) => (
+                    <li key={label}>
+                      <a
+                        href={href}
+                        {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                        className="group flex items-center gap-4 py-4"
+                      >
+                        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-border bg-card-2 text-muted transition-colors duration-300 group-hover:border-accent group-hover:text-accent">
+                          <Icon size={17} />
+                        </span>
+                        <span className="min-w-0 flex-1">
+                          <span className="block text-xs text-faint">{label}</span>
+                          <span className="block truncate text-sm font-medium text-foreground">{value}</span>
+                        </span>
+                        <ArrowUpRight
+                          size={18}
+                          className="text-faint transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground"
+                        />
+                      </a>
+                    </li>
+                  ))}
+                  <li className="flex items-start gap-4 py-4">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-border bg-card-2 text-muted">
+                      <MapPin size={17} />
+                    </span>
+                    <span>
+                      <span className="block text-xs text-faint">{t('location')}</span>
+                      <span className="block text-sm font-medium leading-relaxed text-foreground">
+                        Lot 39 E Parcelle 23/42, Dépôt Analakininina, Toamasina I, Atsinanana, Madagascar
+                      </span>
+                    </span>
+                  </li>
+                </ul>
               </div>
-            </a>
 
-            <a
-              href="tel:+261380836502"
-              className="flex items-center gap-4 bg-[#14141c] border border-[#262633] rounded-xl p-4 card-hover"
-            >
-              <Phone className="text-cyan-400" />
-              <div>
-                <p className="text-xs text-gray-500">{t('phone')}</p>
-                <p className="text-gray-200 text-sm">+261 33 66 030 90</p>
-              </div>
-            </a>
+              <form onSubmit={handleSubmit} className="flex flex-col gap-3 rounded-3xl border border-border bg-background/60 p-4 backdrop-blur-xl md:p-6">
+                <div className="grid gap-3 sm:grid-cols-2">
+                  <div className="relative">
+                    <input id="contact-name" name="name" type="text" required autoComplete="name" placeholder={t('name')} className={fieldClass} />
+                    <label htmlFor="contact-name" className={labelClass}>{t('name')}</label>
+                  </div>
+                  <div className="relative">
+                    <input id="contact-email" name="email" type="email" required autoComplete="email" placeholder={t('email')} className={fieldClass} />
+                    <label htmlFor="contact-email" className={labelClass}>{t('email')}</label>
+                  </div>
+                </div>
+                <div className="relative flex-1">
+                  <textarea
+                    id="contact-message"
+                    name="message"
+                    required
+                    rows={7}
+                    placeholder={t('message')}
+                    className={`${fieldClass} h-full min-h-[200px] resize-none`}
+                  />
+                  <label htmlFor="contact-message" className={labelClass}>{t('message')}</label>
+                </div>
 
-            <div className="flex items-center gap-4 bg-[#14141c] border border-[#262633] rounded-xl p-4">
-              <MapPin className="text-cyan-400" />
-              <div>
-                <p className="text-xs text-gray-500">{t('location')}</p>
-                <p className="text-gray-200 text-sm">Lot 39 E Parcelle 23/42, Dépôt Analakininina, Toamasina I, Atsinanana, Madagascar</p>
-              </div>
+                <button
+                  type="submit"
+                  disabled={status === 'sending'}
+                  className="group relative inline-flex h-14 items-center justify-center gap-2 overflow-hidden rounded-2xl bg-foreground px-6 font-medium text-background transition-transform duration-300 hover:scale-[1.01] active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-60"
+                >
+                  {status === 'sending' ? (
+                    <>
+                      <Loader2 size={18} className="animate-spin" /> {t('sending')}
+                    </>
+                  ) : (
+                    <>
+                      {t('send')}
+                      <Send size={16} className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-1" />
+                    </>
+                  )}
+                </button>
+
+                <div aria-live="polite" className="min-h-6">
+                  <AnimatePresence mode="wait">
+                    {status === 'success' && (
+                      <motion.p
+                        key="success"
+                        initial={{ opacity: 0, y: 6 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -6 }}
+                        transition={{ duration: 0.3, ease: EASE }}
+                        className="flex items-center gap-2 text-sm text-success"
+                      >
+                        <CheckCircle2 size={16} /> {t('success')}
+                      </motion.p>
+                    )}
+                    {status === 'error' && (
+                      <motion.p
+                        key="error"
+                        initial={{ opacity: 0, y: 6 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -6 }}
+                        transition={{ duration: 0.3, ease: EASE }}
+                        className="flex items-center gap-2 text-sm text-danger"
+                      >
+                        <AlertCircle size={16} /> {t('error')}
+                      </motion.p>
+                    )}
+                  </AnimatePresence>
+                </div>
+              </form>
             </div>
-
-            <a
-              href="https://github.com/mahazoasy"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-4 bg-[#14141c] border border-[#262633] rounded-xl p-4 card-hover"
-            >
-              <FaGithub className="text-cyan-400" size={20} />
-              <div>
-                <p className="text-xs text-gray-500">{t('github')}</p>
-                <p className="text-gray-200 text-sm">github.com/mahazoasy</p>
-              </div>
-            </a>
-          </motion.div>
-
-          <motion.form
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            onSubmit={handleSubmit}
-            className="space-y-4"
-          >
-            <input
-              name="name"
-              type="text"
-              required
-              placeholder={t('name')}
-              className="w-full bg-[#14141c] border border-[#262633] rounded-xl px-4 py-3 text-gray-200 placeholder-gray-500 focus:outline-none focus:border-cyan-500 transition-colors"
-            />
-            <input
-              name="email"
-              type="email"
-              required
-              placeholder={t('email')}
-              className="w-full bg-[#14141c] border border-[#262633] rounded-xl px-4 py-3 text-gray-200 placeholder-gray-500 focus:outline-none focus:border-cyan-500 transition-colors"
-            />
-            <textarea
-              name="message"
-              required
-              rows={6}
-              placeholder={t('message')}
-              className="w-full bg-[#14141c] border border-[#262633] rounded-xl px-4 py-3 text-gray-200 placeholder-gray-500 focus:outline-none focus:border-cyan-500 transition-colors resize-none"
-            />
-            <button
-              type="submit"
-              disabled={status === 'sending'}
-              className="w-full inline-flex items-center justify-center gap-2 bg-cyan-500 text-black font-semibold rounded-xl px-6 py-3 hover:bg-cyan-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {status === 'sending' ? (
-                <>
-                  <Loader2 size={18} className="animate-spin" /> {t('sending')}
-                </>
-              ) : (
-                <>
-                  <Send size={18} /> {t('send')}
-                </>
-              )}
-            </button>
-
-            {status === 'success' && (
-              <p className="flex items-center gap-2 text-emerald-400 text-sm">
-                <CheckCircle size={16} /> {t('success')}
-              </p>
-            )}
-            {status === 'error' && (
-              <p className="flex items-center gap-2 text-red-400 text-sm">
-                <AlertCircle size={16} /> {t('error')}
-              </p>
-            )}
-          </motion.form>
-        </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

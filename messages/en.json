@@ -3,6 +3,7 @@
     "home": "Home",
     "about": "About",
     "skills": "Skills",
+    "services": "Services",
     "projects": "Projects",
     "experience": "Experience",
     "education": "Education",
@@ -11,15 +12,19 @@
   "hero": {
     "greeting": "Hi, I'm",
     "name": "Mahazoasy Heritiana Judicaël",
-    "title": "Junior Web Developer | Full-Stack",
+    "title": "Full-Stack Web & Mobile Developer",
     "roles": [
       "Full-Stack Developer",
       "Web & Mobile Developer",
-      "AI & Data Enthusiast",
-      "Software Engineering Student"
+      "AI & Data Enthusiast"
     ],
+    "pitch": "I build professional showcase websites, fast web applications and React Native mobile apps — from frontend to backend, all the way to deployment.",
     "location": "Toamasina, Madagascar",
-    "availability": "Open to opportunities",
+    "locationShort": "Madagascar",
+    "availability": "Available for missions & projects",
+    "trust1": "Reply within 24h",
+    "trust2": "Remote, worldwide",
+    "trust3": "French · English · Malagasy",
     "ctaProjects": "View my projects",
     "ctaCv": "Download my CV",
     "ctaContact": "Contact me",
@@ -29,13 +34,60 @@
     "title": "About me",
     "subtitle": "Who I am",
     "based": "Based in",
-    "text1": "Junior Web Developer, recently graduated in Computer Science, Software Engineering track. I build modern web and mobile applications and have hands-on experience in frontend, backend, databases, REST APIs, UI/UX design and containerization.",
-    "text2": "Curious, autonomous and passionate about new technologies, I am looking for a professional opportunity to contribute to real projects and keep improving.",
+    "text1": "Full-stack web and mobile developer, recently graduated in Computer Science (Software Engineering) from Université Adventiste Zurcher. I build modern web and mobile applications with React, Next.js, Node.js and TypeScript.",
+    "text2": "My final-year project, AllMada, is a Malagasy e-commerce marketplace made of a web app, a mobile app and a shared backend. I worked on REST APIs, JWT authentication, multi-role management (admin, sellers, customers), shops, products, orders and payments, as well as MongoDB, Docker and Git/GitHub.",
+    "text3": "What I bring to you: clean and readable code, clear communication, on-time delivery, and real attention to detail so your project works from day one.",
+    "p1title": "Clean code",
+    "p1desc": "Readable, tested, object-oriented code that's ready to grow with your project.",
+    "p2title": "Full lifecycle",
+    "p2desc": "From design to going live: mockups, development, testing, deployment.",
+    "p3title": "Client-focused",
+    "p3desc": "Your satisfaction and your project's success are my priorities.",
+    "infoTitle": "Practical information",
+    "infoLocation": "Location",
+    "infoLocationValue": "Toamasina, Madagascar",
+    "infoEducation": "Education",
+    "infoEducationValue": "Bachelor's in Computer Science, Université Adventiste Zurcher, 2023 – 2026",
+    "infoLanguages": "Languages",
+    "infoLanguagesValue": "Malagasy (native), French (fluent), English (intermediate)",
+    "infoAvailability": "Availability",
+    "infoAvailabilityValue": "Available for missions, internships and freelance projects",
     "stats": {
       "projects": "Projects",
       "tech": "Technologies",
       "languages": "Languages",
       "graduated": "Graduated"
+    }
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "What I can build for you",
+    "intro": "From idea to launch — custom websites, applications and tools.",
+    "ctaTitle": "Got a project in mind? Let's talk.",
+    "ctaButton": "Request a quote",
+    "web": {
+      "title": "Websites & web apps",
+      "desc": "Fast, accessible interfaces with React and Next.js, connected to a Node.js API and a MongoDB or SQL database."
+    },
+    "mobile": {
+      "title": "Mobile applications",
+      "desc": "Android and iOS apps with React Native and Expo: smooth navigation, real-time sync, notifications."
+    },
+    "backend": {
+      "title": "APIs & backend",
+      "desc": "Documented and secure REST APIs (JWT, Swagger), relational or NoSQL databases, webhooks and third-party integrations."
+    },
+    "tools": {
+      "title": "Custom management tools",
+      "desc": "Inventory, sales, bookings, user roles: business apps tailored to your activity (hotel, shop, NGO…)."
+    },
+    "ai": {
+      "title": "AI features",
+      "desc": "Recommendation, classification, image or voice processing: add intelligence to your product."
+    },
+    "perf": {
+      "title": "Performance optimization",
+      "desc": "Queries, bundle size, load time: targeted audits and optimizations to speed up your application."
     }
   },
   "skills": {
@@ -51,29 +103,29 @@
     "methods": "Methods",
     "alsoUsed": "Also used"
   },
-    "projects": {
+  "projects": {
     "title": "Main projects",
     "subtitle": "My work",
     "viewCode": "View code",
     "viewDemo": "View demo",
     "watchVideo": "Watch video",
     "allmada": {
-        "title": "AllMada — E-commerce Marketplace",
-        "description": "Final-year project: design and development of a Malagasy web and mobile marketplace with an architecture close to professional e-commerce platforms. Dual administration: a platform administrator supervises the marketplace, while each seller has their own shop to manage products, orders and activities."
+      "title": "AllMada — E-commerce Marketplace",
+      "description": "Final-year project: design and development of a Malagasy web and mobile marketplace with an architecture close to professional e-commerce platforms. Dual administration: a platform administrator supervises the marketplace, while each seller has their own shop to manage products, orders and activities."
     },
     "speaker": {
-        "title": "Speaker Recognition",
-        "description": "AI prototype that distinguishes the user's voice from another person's voice using voice embeddings."
+      "title": "Speaker Recognition",
+      "description": "AI prototype that distinguishes the user's voice from another person's voice using voice embeddings."
     },
     "ocr": {
-        "title": "OCR Application for Exams",
-        "description": "Image processing and grading assistance app with KNN classification, results visualization and document generation."
+      "title": "OCR Application for Exams",
+      "description": "Image processing and grading assistance app with KNN classification, results visualization and document generation."
     },
     "bible": {
-        "title": "Bible Mobile App",
-        "description": "Mobile app with navigation, multilingual support and backend services integration."
+      "title": "Bible Mobile App",
+      "description": "Mobile app with navigation, multilingual support and backend services integration."
     }
-    },
+  },
   "experience": {
     "title": "Practical experience",
     "subtitle": "What I can do",
@@ -92,7 +144,7 @@
     "subtitle": "My academic background",
     "degree": "Bachelor's Degree in Computer Science — Software Engineering",
     "school": "Université Adventiste Zurcher (UAZ), Sambaina / Antsirabe",
-    "date": "Graduated on August 2, 2026"
+    "date": "Graduated in 2026"
   },
   "softskills": {
     "title": "Strengths",
@@ -120,7 +172,7 @@
   },
   "contact": {
     "title": "Contact",
-    "subtitle": "Have an opportunity for me? Write to me.",
+    "subtitle": "Got a project in mind? Let's talk.",
     "name": "Name",
     "email": "Email",
     "message": "Message",

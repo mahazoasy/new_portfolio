@@ -1,54 +1,51 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { motion } from 'framer-motion';
-import { GraduationCap, Calendar, MapPin } from 'lucide-react';
+import { Calendar, GraduationCap, MapPin } from 'lucide-react';
+import Reveal from '@/components/motion/Reveal';
+import SpotlightCard from '@/components/motion/SpotlightCard';
+import SectionHeader from './SectionHeader';
 
 export default function Education() {
   const t = useTranslations('education');
 
   return (
-    <section id="education" className="relative py-24 px-10">
-      <div className="max-w-4xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <p className="text-sm font-medium text-cyan-400 uppercase tracking-widest mb-3">
-            {t('subtitle')}
-          </p>
-          <h2 className="text-3xl md:text-5xl font-bold">
-            <span className="gradient-text">{t('title')}</span>
-          </h2>
-        </motion.div>
+    <section id="education" className="relative px-6 py-28 md:px-10 md:py-36">
+      <div className="mx-auto max-w-5xl">
+        <SectionHeader eyebrow={t('subtitle')} title={t('title')} />
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="relative rounded-2xl border border-[#1f1f2e] bg-gradient-to-br from-[#0f0f16] to-[#0f0f16]/50 backdrop-blur p-8 card-hover overflow-hidden"
-        >
-          <div className="absolute top-0 right-0 w-40 h-40 bg-cyan-500/10 rounded-full blur-3xl" />
-          <div className="relative flex flex-col md:flex-row items-start gap-6">
-            <div className="p-4 rounded-2xl bg-gradient-to-br from-cyan-500 to-purple-500 text-white shadow-lg flex-shrink-0">
-              <GraduationCap size={32} />
-            </div>
-            <div className="flex-1">
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
-                {t('degree')}
-              </h3>
-              <p className="inline-flex items-center gap-2 text-gray-400 mb-4">
-                <MapPin size={16} className="text-cyan-400" />
-                {t('school')}
-              </p>
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-sm">
-                <Calendar size={14} /> {t('date')}
+        <Reveal delay={0.1} className="mt-16">
+          <SpotlightCard className="p-8 md:p-14" size={600}>
+            <div
+              aria-hidden
+              className="absolute inset-x-12 top-0 h-px bg-gradient-to-r from-transparent via-accent to-transparent"
+            />
+            <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
+              <div className="max-w-2xl">
+                <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-accent-soft text-accent">
+                  <GraduationCap size={26} />
+                </span>
+                <h3 className="mt-8 text-2xl font-semibold leading-tight tracking-tight text-balance text-foreground md:text-4xl">
+                  {t('degree')}
+                </h3>
+                <p className="mt-4 inline-flex items-start gap-2 text-muted">
+                  <MapPin size={16} className="mt-1 shrink-0 text-accent" />
+                  {t('school')}
+                </p>
+              </div>
+
+              <div className="flex flex-col items-start gap-3 md:items-end">
+                <span aria-hidden className="text-gradient text-7xl font-semibold leading-none tracking-[-0.06em] md:text-8xl">
+                  2026
+                </span>
+                <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card-2 px-4 py-1.5 text-sm text-muted">
+                  <Calendar size={14} className="text-accent" />
+                  {t('date')}
+                </span>
               </div>
             </div>
-          </div>
-        </motion.div>
+          </SpotlightCard>
+        </Reveal>
       </div>
     </section>
   );

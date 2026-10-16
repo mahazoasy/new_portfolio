@@ -1,39 +1,47 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { motion } from 'framer-motion';
+import SectionHeader from './SectionHeader';
+import Reveal from '@/components/motion/Reveal';
 
 export default function SoftSkills() {
   const t = useTranslations('softskills');
   const items = t.raw('items') as string[];
+  const loop = [...items, ...items];
 
   return (
-    <section className="py-24 px-10 bg-[#0d0d14]">
-      <div className="max-w-4xl mx-auto">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-bold mb-12 text-center"
-        >
-          <span className="gradient-text">{t('title')}</span>
-        </motion.h2>
-
-        <div className="flex flex-wrap justify-center gap-3">
-          {items.map((item, idx) => (
-            <motion.span
-              key={idx}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: idx * 0.05 }}
-              className="px-5 py-2.5 rounded-full bg-[#14141c] border border-[#262633] text-gray-300 hover:border-cyan-500 transition-colors"
-            >
-              {item}
-            </motion.span>
-          ))}
-        </div>
+    <section className="relative overflow-hidden border-y border-border bg-card-2/50 py-24 md:py-32">
+      <div className="px-6 md:px-10">
+        <SectionHeader title={t('title')} />
       </div>
+
+      <Reveal delay={0.1} className="mt-14 space-y-4">
+        <ul className="sr-only">
+          {items.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+
+        {[false, true].map((reverse) => (
+          <div key={String(reverse)} aria-hidden className="mask-fade-x overflow-hidden">
+            <div
+              className={`flex w-max gap-4 hover:[animation-play-state:paused] ${
+                reverse ? 'animate-marquee-reverse' : 'animate-marquee'
+              }`}
+            >
+              {loop.map((item, i) => (
+                <span
+                  key={`${item}-${i}`}
+                  className="flex shrink-0 items-center gap-4 rounded-full border border-border bg-card px-7 py-4 text-xl font-medium tracking-tight text-muted transition-colors duration-300 hover:border-accent hover:text-foreground md:text-2xl"
+                >
+                  <span className="h-2 w-2 rounded-full bg-accent" />
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </Reveal>
     </section>
   );
 }

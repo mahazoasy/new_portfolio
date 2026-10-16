@@ -20,7 +20,7 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    const sections = ['home', 'about', 'skills', 'projects', 'experience', 'education', 'contact'];
+    const sections = ['home', 'about', 'skills', 'services', 'projects', 'experience', 'education', 'contact'];
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -39,6 +39,7 @@ export default function Navbar() {
   const links = [
     { href: '#about', label: t('about'), id: 'about' },
     { href: '#skills', label: t('skills'), id: 'skills' },
+    { href: '#services', label: t('services'), id: 'services' },
     { href: '#projects', label: t('projects'), id: 'projects' },
     { href: '#experience', label: t('experience'), id: 'experience' },
     { href: '#education', label: t('education'), id: 'education' },

@@ -2,39 +2,42 @@
 
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
-import { Target } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
+import { EASE } from '@/components/motion/Reveal';
+import SpotlightCard from '@/components/motion/SpotlightCard';
+import SectionHeader from './SectionHeader';
 
 export default function Domains() {
   const t = useTranslations('domains');
   const items = t.raw('items') as string[];
 
   return (
-    <section className="py-24 px-10">
-      <div className="max-w-4xl mx-auto">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-bold mb-12 text-center"
-        >
-          <span className="gradient-text">{t('title')}</span>
-        </motion.h2>
+    <section className="relative px-6 py-28 md:px-10 md:py-36">
+      <div className="mx-auto max-w-6xl">
+        <SectionHeader title={t('title')} />
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {items.map((item, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 20 }}
+        <ul className="mt-16 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {items.map((item, i) => (
+            <motion.li
+              key={item}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.05 }}
-              className="flex items-center gap-3 bg-[#14141c] border border-[#262633] rounded-xl p-4 card-hover"
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.7, delay: i * 0.06, ease: EASE }}
             >
-              <Target size={18} className="text-cyan-400" />
-              <span className="text-gray-300 text-sm">{item}</span>
-            </motion.div>
+              <SpotlightCard className="flex h-full min-h-[150px] flex-col justify-between p-6">
+                <div className="flex items-center justify-between">
+                  <span className="font-mono text-xs text-faint">{String(i + 1).padStart(2, '0')}</span>
+                  <ArrowUpRight
+                    size={18}
+                    className="text-faint transition-all duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent"
+                  />
+                </div>
+                <p className="mt-10 text-lg font-medium tracking-tight text-foreground">{item}</p>
+              </SpotlightCard>
+            </motion.li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

@@ -1,61 +1,52 @@
 'use client';
 
+import { useRef } from 'react';
 import { useTranslations } from 'next-intl';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useSpring } from 'framer-motion';
+import { EASE } from '@/components/motion/Reveal';
+import SectionHeader from './SectionHeader';
 
 export default function Experience() {
   const t = useTranslations('experience');
   const items = t.raw('items') as string[];
 
+  const listRef = useRef<HTMLOListElement>(null);
+  const { scrollYProgress } = useScroll({ target: listRef, offset: ['start 75%', 'end 60%'] });
+  const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 30 });
+
   return (
-    <section id="experience" className="relative py-24 px-10 bg-[#08080e]">
-      <div className="max-w-4xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <p className="text-sm font-medium text-cyan-400 uppercase tracking-widest mb-3">
-            {t('subtitle')}
-          </p>
-          <h2 className="text-3xl md:text-5xl font-bold">
-            <span className="gradient-text">{t('title')}</span>
-          </h2>
-        </motion.div>
-
-        <div className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-cyan-500/50 via-purple-500/30 to-transparent" />
-
-          <ul className="space-y-8">
-            {items.map((item, idx) => (
-              <motion.li
-                key={idx}
-                initial={{ opacity: 0, x: idx % 2 === 0 ? -30 : 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.05 }}
-                className={`relative flex items-start gap-6 ${
-                  idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                }`}
-              >
-                {/* Dot */}
-                <div className="absolute left-4 md:left-1/2 -translate-x-1/2 mt-2 z-10">
-                  <span className="block w-3 h-3 rounded-full bg-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.8)]" />
-                </div>
-
-                {/* Content */}
-                <div className="ml-12 md:ml-0 md:w-1/2 md:px-8">
-                  <div className="rounded-xl border border-[#1f1f2e] bg-[#0f0f16] p-5 card-hover">
-                    <p className="text-gray-300 text-sm leading-relaxed">{item}</p>
-                  </div>
-                </div>
-                <div className="hidden md:block md:w-1/2" />
-              </motion.li>
-            ))}
-          </ul>
+    <section id="experience" className="relative bg-card-2/50 px-6 py-28 md:px-10 md:py-36">
+      <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[1fr_1.4fr] lg:gap-24">
+        <div className="lg:sticky lg:top-32 lg:self-start">
+          <SectionHeader eyebrow={t('subtitle')} title={t('title')} align="left" />
         </div>
+
+        <ol ref={listRef} className="relative">
+          <span aria-hidden className="absolute bottom-0 left-[15px] top-0 w-px bg-border" />
+          <motion.span
+            aria-hidden
+            style={{ scaleY: progress }}
+            className="absolute bottom-0 left-[15px] top-0 w-px origin-top bg-accent"
+          />
+
+          {items.map((item, i) => (
+            <motion.li
+              key={i}
+              initial={{ opacity: 0, x: 24, filter: 'blur(6px)' }}
+              whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.8, ease: EASE }}
+              className="group relative flex gap-6 pb-10 last:pb-0"
+            >
+              <span className="relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-border bg-background font-mono text-[11px] text-muted transition-colors duration-500 group-hover:border-accent group-hover:text-accent">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              <p className="pt-0.5 text-lg leading-relaxed text-pretty text-muted transition-colors duration-500 group-hover:text-foreground md:text-xl">
+                {item}
+              </p>
+            </motion.li>
+          ))}
+        </ol>
       </div>
     </section>
   );
