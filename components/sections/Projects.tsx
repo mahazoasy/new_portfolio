@@ -31,12 +31,15 @@ function ProjectCard({ project, index, featured = false, onWatch, t }: ProjectCa
   const title = t(`${project.slug}.title`);
   const [name, ...rest] = title.split(' — ');
   const tagline = rest.join(' — ');
+  const isImage = project.isImage === true;
 
   const handleEnter = () => {
+    if (isImage) return;
     videoRef.current?.play().catch(() => {});
   };
 
   const handleLeave = () => {
+    if (isImage) return;
     const video = videoRef.current;
     if (!video) return;
     video.pause();
@@ -44,7 +47,10 @@ function ProjectCard({ project, index, featured = false, onWatch, t }: ProjectCa
     setPlaying(false);
   };
 
-  const watch = () => onWatch({ src: project.video, poster: project.poster, title });
+  const watch = () => {
+    if (isImage) return;
+    onWatch({ src: project.video, poster: project.poster, title });
+  };
 
   return (
     <motion.article
@@ -61,10 +67,12 @@ function ProjectCard({ project, index, featured = false, onWatch, t }: ProjectCa
           <button
             type="button"
             onClick={watch}
-            aria-label={`${t('watchVideo')} — ${title}`}
+            aria-label={isImage ? title : `${t('watchVideo')} — ${title}`}
+            disabled={isImage}
             className={cn(
               'relative block overflow-hidden rounded-[1.25rem] border border-border bg-card-2 text-left',
-              featured ? 'aspect-[16/10] lg:aspect-auto lg:min-h-[440px]' : 'aspect-[16/10]'
+              featured ? 'aspect-[16/10] lg:aspect-auto lg:min-h-[440px]' : 'aspect-[16/10]',
+              isImage ? 'cursor-default' : 'cursor-pointer'
             )}
           >
             <Image
@@ -74,36 +82,42 @@ function ProjectCard({ project, index, featured = false, onWatch, t }: ProjectCa
               sizes={featured ? '(max-width: 1024px) 100vw, 60vw' : '(max-width: 1024px) 100vw, 33vw'}
               className="object-cover object-top transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]"
             />
-            <video
-              ref={videoRef}
-              src={project.video}
-              muted
-              loop
-              playsInline
-              preload="none"
-              onPlaying={() => setPlaying(true)}
-              className={cn(
-                'absolute inset-0 h-full w-full object-cover object-top transition-opacity duration-500',
-                playing ? 'opacity-100' : 'opacity-0'
-              )}
-            />
+
+            {!isImage && (
+              <video
+                ref={videoRef}
+                src={project.video}
+                muted
+                loop
+                playsInline
+                preload="none"
+                onPlaying={() => setPlaying(true)}
+                className={cn(
+                  'absolute inset-0 h-full w-full object-cover object-top transition-opacity duration-500',
+                  playing ? 'opacity-100' : 'opacity-0'
+                )}
+              />
+            )}
+
             <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
             <span className="absolute left-4 top-4 rounded-full border border-white/15 bg-black/30 px-3 py-1 font-mono text-[11px] text-[#fafafa] backdrop-blur-xl">
               {String(index + 1).padStart(2, '0')}
             </span>
 
-            <span
-              className={cn(
-                'absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full bg-[#fafafa] py-1.5 pl-1.5 pr-4 text-xs font-medium text-[#0a0a0b] shadow-lg transition-all duration-500',
-                playing ? 'translate-y-2 opacity-0' : 'translate-y-0 opacity-100'
-              )}
-            >
-              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-accent text-on-accent">
-                <Play size={10} fill="currentColor" className="ml-0.5" />
+            {!isImage && (
+              <span
+                className={cn(
+                  'absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full bg-[#fafafa] py-1.5 pl-1.5 pr-4 text-xs font-medium text-[#0a0a0b] shadow-lg transition-all duration-500',
+                  playing ? 'translate-y-2 opacity-0' : 'translate-y-0 opacity-100'
+                )}
+              >
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-accent text-on-accent">
+                  <Play size={10} fill="currentColor" className="ml-0.5" />
+                </span>
+                {t('watchVideo')}
               </span>
-              {t('watchVideo')}
-            </span>
+            )}
           </button>
 
           <div className={cn('flex flex-1 flex-col p-5 md:p-6', featured && 'lg:p-10')}>
@@ -199,7 +213,6 @@ export default function Projects() {
         <div className="mx-auto max-w-7xl">
           <SectionHeader eyebrow={t('subtitle')} title={t('title')} />
 
-          {/* Filtres */}
           <div className="mt-10 flex flex-wrap items-center justify-center gap-2">
             {filters.map(({ key, label }) => (
               <button
@@ -218,7 +231,6 @@ export default function Projects() {
             ))}
           </div>
 
-          {/* Grille de projets filtrés */}
           {filtered.length === 0 ? (
             <p className="mt-16 text-center text-muted">{t('empty')}</p>
           ) : (

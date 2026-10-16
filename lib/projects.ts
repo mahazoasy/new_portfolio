@@ -8,6 +8,7 @@ export type Project = {
   github: string;
   demo: string;
   category: ProjectCategory;
+  isImage?: boolean;
 };
 
 export const projects: Project[] = [
@@ -19,6 +20,16 @@ export const projects: Project[] = [
     github: 'https://github.com/mahazoasy/AllMada_Web.git',
     demo: '',
     category: 'web'
+  },
+  {
+    slug: 'portfolio',
+    stack: ['Next.js', 'TypeScript', 'Tailwind', 'Framer Motion', 'Vercel'],
+    video: '/videos/posters/portfolio.png',
+    poster: '/videos/posters/portfolio.png',
+    github: 'https://github.com/mahazoasy/new_portfolio',
+    demo: 'https://portfolio-bcgf.vercel.app',
+    category: 'web',
+    isImage: true
   },
   {
     slug: 'plume-relais',
@@ -55,14 +66,5 @@ export const projects: Project[] = [
     github: 'https://github.com/mahazoasy',
     demo: '',
     category: 'mobile'
-  },
-  {
-  slug: 'portfolio',
-  stack: ['Next.js', 'TypeScript', 'Tailwind', 'Framer Motion', 'Vercel'],
-  video: '/videos/portfolio.mp4',
-  poster: '/videos/posters/portfolio.webp',
-  github: 'https://github.com/mahazoasy/new_portfolio',
-  demo: 'https://mahazoasy-heritiana.vercel.app',
-  category: 'web'
-},
+  }
 ];
