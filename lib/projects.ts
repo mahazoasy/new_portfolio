@@ -50,6 +50,15 @@ export const projects: Project[] = [
     category: 'mobile'
   },
   {
+    slug: 'sonicflow',
+    stack: ['Kotlin', 'Jetpack Compose', 'Media3', 'Room', 'Hilt'],
+    video: '/videos/sonicflow.mp4',
+    poster: '/videos/posters/sonicflow.webp',
+    github: 'https://github.com/mahazoasy',
+    demo: '',
+    category: 'mobile'
+  },
+  {
     slug: 'bible',
     stack: ['React Native', 'Expo', 'TypeScript', 'Supabase'],
     video: '/videos/bible.mp4',

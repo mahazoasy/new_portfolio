@@ -143,6 +143,10 @@
     "invisible-queue": {
     "title": "Invisible Queue — Files d'attente virtuelles",
     "description": "Application mobile qui dématérialise les files d'attente physiques. L'utilisateur rejoint une file à proximité, suit sa position en temps réel et est notifié à l'approche de son tour. Supabase pour l'authentification et le temps réel, mode invité ou connecté, gestion des retards et des passages, géolocalisation obligatoire."
+  },
+    "sonicflow": {
+    "title": "SonicFlow — Lecteur Audio Android",
+    "description": "Lecteur audio local Android développé en Kotlin avec Jetpack Compose. Lecture en arrière-plan via MediaSessionService (Media3), playlists personnalisées gérées avec Room (relations many-to-many), filtrage et tri dynamique, et visualisation interactive de la forme d'onde générée à partir de MediaExtractor."
   }
   },
   "experience": {

@@ -143,6 +143,10 @@
     "invisible-queue": {
     "title": "Invisible Queue — Virtual Waiting Lines",
     "description": "Mobile app that digitizes physical waiting lines. Users join a nearby queue, track their real-time position and get notified as their turn approaches. Supabase for authentication and real-time sync, guest or logged-in mode, delay and turn management, mandatory geolocation."
+  },
+    "sonicflow": {
+    "title": "SonicFlow — Android Audio Player",
+    "description": "Local Android audio player built with Kotlin and Jetpack Compose. Background playback via MediaSessionService (Media3), custom playlists managed with Room (many-to-many relations), dynamic filtering and sorting, and interactive waveform visualization generated from MediaExtractor."
   }
   },
   "experience": {
