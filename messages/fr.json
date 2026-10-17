@@ -106,49 +106,83 @@
   "projects": {
     "title": "Projets principaux",
     "subtitle": "Mes réalisations",
-    "viewCode": "Voir le code",
+    "viewCode": "Code source",
     "viewDemo": "Voir la démo",
     "watchVideo": "Voir la vidéo",
-    "filters": {
-      "all": "Tous",
-      "web": "Web",
-      "mobile": "Mobile",
-      "api": "API"
-    },
-    "empty": "Aucun projet dans cette catégorie pour le moment.",
+    "viewDetails": "Voir les détails",
+    "filters": { "all": "Tous", "web": "Web", "mobile": "Mobile" },
+    "empty": "Aucun projet dans cette catégorie.",
+    "viewAll": "Voir tous les projets",
     "allmada": {
       "title": "AllMada — Marketplace e-commerce",
-      "description": "Projet de fin d'études : conception et développement d'une marketplace malgache Web et mobile avec une architecture proche des plateformes e-commerce professionnelles. Double administration : un administrateur de la plateforme supervise le marketplace, tandis que chaque vendeur dispose de son propre espace pour gérer ses produits, commandes et activités."
+      "subtitle": "Plateforme Web & Mobile",
+      "description": "Projet de fin d'études : conception et développement d'une marketplace malgache Web et mobile avec une architecture proche des plateformes e-commerce professionnelles. Double administration : un administrateur de la plateforme supervise le marketplace, tandis que chaque vendeur dispose de son propre espace pour gérer ses produits, commandes et activités.",
+      "highlights": [
+        "Architecture complète : Web (Angular), Mobile et Backend (NestJS).",
+        "Authentification JWT et gestion des rôles (Admin, Vendeurs, Clients).",
+        "Intégration des paiements sécurisés avec Stripe.",
+        "Gestion des produits, des commandes et des boutiques.",
+        "Conteneurisation complète avec Docker et Docker Compose."
+      ]
+    },
+    "portfolio": {
+      "title": "Portfolio Personnel",
+      "subtitle": "Site Web bilingue",
+      "description": "Portfolio bilingue (FR/EN) conçu et développé avec Next.js 16, TypeScript, Tailwind CSS 4 et Framer Motion. Animations fluides, formulaire de contact via Resend, déploiement automatique sur Vercel. Design moderne, responsive et optimisé SEO.",
+      "highlights": [
+        "Design moderne et épuré avec un mode sombre/clair.",
+        "Internationalisation complète (Français / Anglais).",
+        "Animations fluides au scroll avec Framer Motion.",
+        "Formulaire de contact fonctionnel via l'API Resend.",
+        "Déploiement continu sur Vercel via GitHub."
+      ]
     },
     "plume-relais": {
-      "title": "Plume Relais — Écriture collaborative",
-      "description": "Application mobile d'écriture collaborative où chaque participant ajoute un paragraphe à un récit en cours, à l'aveugle. À chaque tour, plusieurs suites sont proposées et la communauté vote pour la suite officielle. Un mélange de cadavre exquis et de réseau social d'écriture, en temps réel."
+      "title": "Plume Relais",
+      "subtitle": "Écriture collaborative",
+      "description": "Application mobile d'écriture collaborative où chaque participant ajoute un paragraphe à un récit en cours, à l'aveugle. À chaque tour, plusieurs suites sont proposées et la communauté vote pour la suite officielle. Un mélange de cadavre exquis et de réseau social d'écriture, en temps réel.",
+      "highlights": [
+        "Mécanique de relais à l'aveugle pour surprendre les participants.",
+        "Système de vote en temps réel pour choisir la suite canon.",
+        "Authentification et synchronisation temps réel via Supabase.",
+        "Notifications pour avertir des nouveaux tours et votes.",
+        "Interface fluide et intuitive avec React Native."
+      ]
     },
-    "speaker": {
-      "title": "Speaker Recognition — Reconnaissance du locuteur",
-      "description": "Prototype d'intelligence artificielle permettant de distinguer la voix de l'utilisateur de celle d'une autre personne à partir d'empreintes vocales."
+    "invisible-queue": {
+      "title": "Invisible Queue",
+      "subtitle": "Files d'attente virtuelles",
+      "description": "Application mobile qui dématérialise les files d'attente physiques. L'utilisateur rejoint une file à proximité, suit sa position en temps réel et est notifié à l'approche de son tour. Supabase pour l'authentification et le temps réel, mode invité ou connecté, gestion des retards et des passages, géolocalisation obligatoire.",
+      "highlights": [
+        "Géolocalisation stricte : on ne peut rejoindre que les files à proximité.",
+        "Suivi de la position en temps réel sans rechargement.",
+        "Mode invité (sans compte) ou authentifié (Supabase Auth).",
+        "Gestion intelligente des retards (recul de 3 places, exclusion après 3 retards).",
+        "Création de files d'attente réservée aux utilisateurs connectés."
+      ]
     },
-    "ocr": {
-      "title": "Application OCR pour examens",
-      "description": "Application de traitement d'images et d'aide à la correction avec classification KNN, visualisation des résultats et génération de documents."
+    "sonicflow": {
+      "title": "SonicFlow",
+      "subtitle": "Lecteur de musique Android natif",
+      "description": "Lecteur de musique pour Android qui lit les morceaux de l'appareil : bibliothèque par artistes, albums et genres, playlists, favoris et lecture en arrière-plan.",
+      "highlights": [
+        "Bibliothèque classée par artistes, albums et genres (Room).",
+        "Lecture en arrière-plan avec notification (Media3 / ExoPlayer).",
+        "Mini-lecteur et visualisation de la forme d'onde générée.",
+        "Minuteur de sommeil et modes de lecture (aléatoire, répétition).",
+        "Interface en Jetpack Compose et Material 3 avec effet glassmorphism."
+      ]
     },
     "bible": {
       "title": "Application mobile Bible",
-      "description": "Application mobile avec navigation, gestion multilingue et intégration de services backend."
-    },
-    "portfolio": {
-    "title": "Portfolio Personnel — Next.js",
-    "description": "Portfolio bilingue (FR/EN) conçu et développé avec Next.js 16, TypeScript, Tailwind CSS 4 et Framer Motion. Animations fluides, formulaire de contact via Resend, déploiement automatique sur Vercel. Design moderne, responsive et optimisé SEO."
-    },
-    "invisible-queue": {
-    "title": "Invisible Queue — Files d'attente virtuelles",
-    "description": "Application mobile qui dématérialise les files d'attente physiques. L'utilisateur rejoint une file à proximité, suit sa position en temps réel et est notifié à l'approche de son tour. Supabase pour l'authentification et le temps réel, mode invité ou connecté, gestion des retards et des passages, géolocalisation obligatoire."
-  },
-    "sonicflow": {
-    "title": "SonicFlow — Lecteur Audio Android",
-    "description": "Lecteur audio local Android développé en Kotlin avec Jetpack Compose. Lecture en arrière-plan via MediaSessionService (Media3), playlists personnalisées gérées avec Room (relations many-to-many), filtrage et tri dynamique, et visualisation interactive de la forme d'onde générée à partir de MediaExtractor."
-  },
-  "viewAll": "Voir tous les projets"
+      "subtitle": "Lecture et méditation",
+      "description": "Application mobile avec navigation, gestion multilingue et intégration de services backend.",
+      "highlights": [
+        "Navigation fluide et intuitive.",
+        "Support multilingue pour la lecture.",
+        "Intégration avec des services backend (Supabase)."
+      ]
+    }
   },
   "experience": {
     "title": "Expérience",

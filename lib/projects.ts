@@ -9,10 +9,10 @@ export type Project = {
   demo: string;
   category: ProjectCategory;
   isImage?: boolean;
+  year: string; 
 };
 
 export const projects: Project[] = [
-  // ── 4 premiers projets (toujours visibles) ──
   {
     slug: 'allmada',
     stack: ['Angular', 'NestJS', 'MongoDB', 'Docker', 'Stripe'],
@@ -20,7 +20,8 @@ export const projects: Project[] = [
     poster: '/videos/posters/allmada.webp',
     github: 'https://github.com/mahazoasy/AllMada_Web.git',
     demo: '',
-    category: 'web'
+    category: 'web',
+    year: '2026'
   },
   {
     slug: 'portfolio',
@@ -28,8 +29,9 @@ export const projects: Project[] = [
     video: '/videos/portfolio.mp4',
     poster: '/videos/posters/portfolio.webp',
     github: 'https://github.com/mahazoasy/new_portfolio',
-    demo: 'https://mahazoasy-heritiana.vercel.app',
-    category: 'web'
+    demo: '',
+    category: 'web',
+    year: '2026'
   },
   {
     slug: 'plume-relais',
@@ -38,7 +40,8 @@ export const projects: Project[] = [
     poster: '/videos/posters/plume-relais.webp',
     github: 'https://github.com/mahazoasy/plume-relais-autre.git',
     demo: '',
-    category: 'mobile'
+    category: 'mobile',
+    year: '2025'
   },
   {
     slug: 'invisible-queue',
@@ -47,44 +50,28 @@ export const projects: Project[] = [
     poster: '/videos/posters/invisible-queue.webp',
     github: 'https://github.com/mahazoasy/InvisibleQueue.git',
     demo: '',
-    category: 'mobile'
+    category: 'mobile',
+    year: '2026'
   },
-  // ── Projets cachés (révélés au clic sur "Tous les projets") ──
+  // ── Projets cachés ──
   {
     slug: 'sonicflow',
     stack: ['Kotlin', 'Jetpack Compose', 'Media3', 'Room', 'Hilt'],
     video: '/videos/sonicflow.mp4',
     poster: '/videos/posters/sonicflow.webp',
-    github: 'https://github.com/mahazoasy',
+    github: 'https://github.com/mahazoasy/SonicFlow.git',
     demo: '',
-    category: 'mobile'
+    category: 'mobile',
+    year: '2026'
   },
   {
     slug: 'bible',
     stack: ['React Native', 'Expo', 'TypeScript', 'Supabase'],
     video: '/videos/bible.mp4',
     poster: '/videos/posters/bible.webp',
-    github: 'https://github.com/mahazoasy',
+    github: 'https://github.com/mahazoasy/ma-bibles.git',
     demo: '',
-    category: 'mobile'
+    category: 'mobile',
+    year: '2025'
   }
-  // 💤 Projets temporairement désactivés
-  // {
-  //   slug: 'speaker',
-  //   stack: ['Python', 'PyTorch', 'SpeechBrain', 'ECAPA-TDNN'],
-  //   video: '/videos/speaker.mp4',
-  //   poster: '/videos/posters/speaker.png',
-  //   github: 'https://github.com/mahazoasy/speaker_recognition_app.git',
-  //   demo: '',
-  //   category: 'api'
-  // },
-  // {
-  //   slug: 'ocr',
-  //   stack: ['Angular', 'NestJS', 'Python', 'KNN', 'Chart.js'],
-  //   video: '/videos/ocr.mp4',
-  //   poster: '/videos/posters/ocr.png',
-  //   github: 'https://github.com/mahazoasy',
-  //   demo: '',
-  //   category: 'web'
-  // }
 ];

@@ -40,3 +40,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 _originals_backup/
+
+# Vidéos originales (ne pas commiter)
+public/videos/*-original.*
+public/videos/*-fixed.*

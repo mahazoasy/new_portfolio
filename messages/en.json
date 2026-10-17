@@ -106,50 +106,84 @@
   "projects": {
     "title": "Main projects",
     "subtitle": "My work",
-    "viewCode": "View code",
+    "viewCode": "Source code",
     "viewDemo": "View demo",
     "watchVideo": "Watch video",
-    "filters": {
-      "all": "All",
-      "web": "Web",
-      "mobile": "Mobile",
-      "api": "API"
-    },
-    "empty": "No project in this category yet.",
+    "viewDetails": "View details",
+    "filters": { "all": "All", "web": "Web", "mobile": "Mobile" },
+    "empty": "No project in this category.",
+    "viewAll": "View all projects",
     "allmada": {
       "title": "AllMada — E-commerce Marketplace",
-      "description": "Final-year project: design and development of a Malagasy web and mobile marketplace with an architecture close to professional e-commerce platforms. Dual administration: a platform administrator supervises the marketplace, while each seller has their own shop to manage products, orders and activities."
+      "subtitle": "Web & Mobile Platform",
+      "description": "Final-year project: design and development of a Malagasy web and mobile marketplace with an architecture close to professional e-commerce platforms. Dual administration: a platform administrator supervises the marketplace, while each seller has their own shop to manage products, orders and activities.",
+      "highlights": [
+        "Full-stack architecture: Web (Angular), Mobile and Backend (NestJS).",
+        "JWT authentication and role management (Admin, Sellers, Customers).",
+        "Secure payment integration with Stripe.",
+        "Product, order, and shop management.",
+        "Full containerization with Docker and Docker Compose."
+      ]
+    },
+    "portfolio": {
+      "title": "Personal Portfolio",
+      "subtitle": "Bilingual website",
+      "description": "Bilingual (FR/EN) portfolio designed and built with Next.js 16, TypeScript, Tailwind CSS 4 and Framer Motion. Smooth animations, contact form via Resend, automatic deployment on Vercel. Modern, responsive and SEO-optimized design.",
+      "highlights": [
+        "Modern, clean design with dark/light mode.",
+        "Full internationalization (French / English).",
+        "Smooth scroll animations with Framer Motion.",
+        "Functional contact form via Resend API.",
+        "Continuous deployment on Vercel via GitHub."
+      ]
     },
     "plume-relais": {
-      "title": "Plume Relais — Collaborative Writing",
-      "description": "Mobile collaborative writing app where each participant blindly adds a paragraph to an ongoing story. At each round, multiple continuations are proposed and the community votes for the official one. A blend of exquisite corpse and writing social network, in real time."
+      "title": "Plume Relais",
+      "subtitle": "Collaborative Writing",
+      "description": "Mobile collaborative writing app where each participant blindly adds a paragraph to an ongoing story. At each round, multiple continuations are proposed and the community votes for the official one. A blend of exquisite corpse and writing social network, in real time.",
+      "highlights": [
+        "Blind relay mechanic to surprise participants.",
+        "Real-time voting system to choose the canon continuation.",
+        "Authentication and real-time sync via Supabase.",
+        "Notifications for new rounds and votes.",
+        "Smooth and intuitive interface with React Native."
+      ]
     },
-    "speaker": {
-      "title": "Speaker Recognition",
-      "description": "AI prototype that distinguishes the user's voice from another person's voice using voice embeddings."
+    "invisible-queue": {
+      "title": "Invisible Queue",
+      "subtitle": "Virtual Waiting Lines",
+      "description": "Mobile app that digitizes physical waiting lines. Users join a nearby queue, track their real-time position and get notified as their turn approaches. Supabase for authentication and real-time sync, guest or logged-in mode, delay and turn management, mandatory geolocation.",
+      "highlights": [
+        "Strict geolocation: you can only join queues nearby.",
+        "Real-time position tracking without refreshing.",
+        "Guest mode (no account) or authenticated (Supabase Auth).",
+        "Smart delay management (3-place setback, exclusion after 3 delays).",
+        "Queue creation reserved for logged-in users."
+      ]
     },
-    "ocr": {
-      "title": "OCR Application for Exams",
-      "description": "Image processing and grading assistance app with KNN classification, results visualization and document generation."
+    "sonicflow": {
+      "title": "SonicFlow",
+      "subtitle": "Native Android Music Player",
+      "description": "Android music player that plays tracks from the device: library by artists, albums and genres, playlists, favorites and background playback.",
+      "highlights": [
+        "Library sorted by artists, albums and genres (Room).",
+        "Background playback with notification (Media3 / ExoPlayer).",
+        "Mini-player and generated waveform visualization.",
+        "Sleep timer and playback modes (shuffle, repeat).",
+        "Jetpack Compose and Material 3 UI with glassmorphism effect."
+      ]
     },
     "bible": {
       "title": "Bible Mobile App",
-      "description": "Mobile app with navigation, multilingual support and backend services integration."
-    },
-    "portfolio": {
-    "title": "Personal Portfolio — Next.js",
-    "description": "Bilingual (FR/EN) portfolio designed and built with Next.js 16, TypeScript, Tailwind CSS 4 and Framer Motion. Smooth animations, contact form via Resend, automatic deployment on Vercel. Modern, responsive and SEO-optimized design."
-    },
-    "invisible-queue": {
-    "title": "Invisible Queue — Virtual Waiting Lines",
-    "description": "Mobile app that digitizes physical waiting lines. Users join a nearby queue, track their real-time position and get notified as their turn approaches. Supabase for authentication and real-time sync, guest or logged-in mode, delay and turn management, mandatory geolocation."
+      "subtitle": "Reading & meditation",
+      "description": "Mobile app with navigation, multilingual support and backend services integration.",
+      "highlights": [
+        "Smooth and intuitive navigation.",
+        "Multilingual support for reading.",
+        "Backend services integration (Supabase)."
+      ]
+    }
   },
-    "sonicflow": {
-    "title": "SonicFlow — Android Audio Player",
-    "description": "Local Android audio player built with Kotlin and Jetpack Compose. Background playback via MediaSessionService (Media3), custom playlists managed with Room (many-to-many relations), dynamic filtering and sorting, and interactive waveform visualization generated from MediaExtractor."
-    },
-    "viewAll": "View all projects"
-    },
     "experience": {
       "title": "Experience",
       "subtitle": "Professional journey & commitments",
