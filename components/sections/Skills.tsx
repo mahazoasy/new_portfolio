@@ -10,7 +10,7 @@ import {
   SiMysql, SiAndroid, SiKotlin, SiExpo, SiPython,
   SiPytorch, SiGit, SiGithub, SiDocker, SiFigma, SiSupabase, SiFirebase,
   SiVercel, SiGithubactions, SiPostman, SiSwagger, SiLinux, SiNpm,
-  SiCplusplus
+  SiCplusplus, SiTensorflow 
 } from 'react-icons/si';
 import { TbBrandReactNative } from 'react-icons/tb';
 import { FaJava } from 'react-icons/fa';
@@ -67,6 +67,7 @@ const skills: Skill[] = [
 
   { name: 'Python', icon: SiPython, color: '#3776AB', category: 'ai' },
   { name: 'PyTorch', icon: SiPytorch, color: '#EE4C2C', category: 'ai' },
+  { name: 'TensorFlow', icon: SiTensorflow, color: '#FF6F00', category: 'ai' },
 
   { name: 'Git', icon: SiGit, color: '#F05032', category: 'devops' },
   { name: 'GitHub', icon: SiGithub, color: MONO, category: 'devops' },
