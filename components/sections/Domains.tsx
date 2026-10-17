@@ -12,7 +12,7 @@ export default function Domains() {
   const items = t.raw('items') as string[];
 
   return (
-    <section className="relative px-6 py-28 md:px-10 md:py-36">
+    <section className="relative px-6 py-16 md:px-10 md:py-24">
       <div className="mx-auto max-w-6xl">
         <SectionHeader title={t('title')} />
 

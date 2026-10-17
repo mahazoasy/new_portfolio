@@ -93,7 +93,7 @@ export default function Skills() {
   const visible = skills.filter((s) => s.category === active);
 
   return (
-    <section id="skills" className="relative overflow-hidden bg-card-2/50 px-6 py-28 md:px-10 md:py-36">
+    <section id="skills" className="relative overflow-hidden bg-card-2/50 px-6 py-16 md:px-10 md:py-24">
       <div className="mx-auto max-w-7xl">
         <SectionHeader eyebrow={t('subtitle')} title={t('title')} />
 

@@ -28,7 +28,7 @@ export default function Experience() {
   const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 30 });
 
   return (
-    <section id="experience" className="relative bg-card-2/50 px-6 py-28 md:px-10 md:py-36">
+    <section id="experience" className="relative bg-card-2/50 px-6 py-16 md:px-10 md:py-24">
       <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[1fr_1.6fr] lg:gap-24">
         <div className="lg:sticky lg:top-32 lg:self-start">
           <SectionHeader eyebrow={t('subtitle')} title={t('title')} align="left" />

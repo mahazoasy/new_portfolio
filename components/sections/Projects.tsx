@@ -379,7 +379,7 @@ export default function Projects() {
 
   return (
     <>
-      <section id="projects" className="relative px-6 py-28 md:px-10 md:py-36">
+      <section id="projects" className="relative px-6 py-16 md:px-10 md:py-24">
         <div className="mx-auto max-w-7xl">
           <SectionHeader eyebrow={t('subtitle')} title={t('title')} />
 

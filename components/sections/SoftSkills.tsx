@@ -10,7 +10,7 @@ export default function SoftSkills() {
   const loop = [...items, ...items];
 
   return (
-    <section className="relative overflow-hidden border-y border-border bg-card-2/50 py-24 md:py-32">
+    <section className="relative overflow-hidden border-y border-border bg-card-2/50 py-16 md:py-24">
       <div className="px-6 md:px-10">
         <SectionHeader title={t('title')} />
       </div>

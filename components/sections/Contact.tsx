@@ -79,7 +79,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="relative px-6 py-28 md:px-10 md:py-36">
+    <section id="contact" className="relative px-6 py-16 md:px-10 md:py-24">
       <div className="mx-auto max-w-7xl">
         <Reveal>
           <div className="relative isolate overflow-hidden rounded-[2.5rem] border border-border bg-card p-6 md:p-12 lg:p-16">
