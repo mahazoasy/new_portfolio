@@ -150,43 +150,44 @@
     },
     "viewAll": "View all projects"
     },
-  "experience": {
-    "title": "Experience",
-    "subtitle": "Professional journey & commitments",
-    "items": [
-      {
-        "role": "Full-Stack Developer Intern",
-        "company": "SLife Tracker SARL",
-        "location": "Antananarivo, Madagascar",
-        "period": "July – October 2025",
-        "description": "Internship during my second year of studies. SLife Tracker is a company specialized in vehicle geolocation in Madagascar [citation:1][citation:5].",
-        "tasks": [
-          "Developed an automatic Excel report generation system from JSON geolocation data [citation:5]",
-          "Created trip and stop reports to optimize clients' fleet management [citation:5]",
-          "Used Node.js and MongoDB for data processing and storage [citation:5]",
-          "Collaborated with the technical team for feature integration"
-        ],
-        "stack": ["Node.js", "MongoDB", "JSON", "Excel"]
-      },
-      {
-        "role": "Volunteer Developer",
-        "company": "HELP Madagascar (NGO)",
-        "location": "Toamasina, Madagascar",
-        "period": "Ongoing",
-        "description": "Volunteer redesign of HELP Madagascar's website, an NGO active since 2000 in Toamasina, alongside the SPARK cohort from Université Adventiste Zurcher.",
-        "tasks": [
-          "Designed a trilingual website, fast even on low connections",
-          "Developed a reliable and traceable online donation engine",
-          "Architecture: Next.js / TypeScript / Tailwind CSS",
-          "Hosting: Vercel + Supabase",
-          "Integrated payment methods suited to Madagascar",
-          "Built a simple back-office for the local team"
-        ],
-        "stack": ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Vercel"],
-        "link": "https://helpmg.vercel.app"
-      }
-    ]
-  },
+    "experience": {
+      "title": "Experience",
+      "subtitle": "Professional journey & commitments",
+      "items": [
+        {
+          "role": "Full-Stack Developer Intern",
+          "company": "SLife Tracker SARL",
+          "location": "Antananarivo, Madagascar",
+          "period": "July – October 2025",
+          "description": "Internship during my second year of studies. SLife Tracker is a company specialized in vehicle geolocation in Madagascar. I worked on a two-person project, learning development best practices and project management.",
+          "tasks": [
+            "Developed a secure web application as a pair (authentication, role management, APIs)",
+            "Used JavaScript, TypeScript, Angular, React.js, NestJS and Express",
+            "Integrated REST APIs and secured authentication",
+            "Learned and practiced Atlassian tools (Jira, Confluence, Bitbucket) for Agile project management",
+            "Introduction to the project manager role: planning, task tracking and team collaboration"
+          ],
+          "stack": ["Angular", "React", "NestJS", "Express", "TypeScript", "Jira", "Confluence"]
+        },
+        {
+          "role": "Volunteer Developer",
+          "company": "HELP Madagascar (NGO)",
+          "location": "Toamasina, Madagascar",
+          "period": "Ongoing",
+          "description": "Volunteer redesign of HELP Madagascar's website, an NGO active since 2000 in Toamasina, alongside the SPARK cohort from Université Adventiste Zurcher.",
+          "tasks": [
+            "Designed a trilingual website, fast even on low connections",
+            "Developed a reliable and traceable online donation engine",
+            "Architecture: Next.js / TypeScript / Tailwind CSS",
+            "Hosting: Vercel + Supabase",
+            "Integrated payment methods suited to Madagascar",
+            "Built a simple back-office for the local team"
+          ],
+          "stack": ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Vercel"],
+          "link": "https://helpmg.vercel.app"
+        }
+      ]
+    },
   "education": {
     "title": "Education",
     "subtitle": "My academic background",

@@ -159,14 +159,15 @@
         "company": "SLife Tracker SARL",
         "location": "Antananarivo, Madagascar",
         "period": "Juillet – Octobre 2025",
-        "description": "Stage effectué durant ma deuxième année d'études. SLife Tracker est une entreprise spécialisée dans la géolocalisation de véhicules à Madagascar [citation:1][citation:5].",
+        "description": "Stage effectué durant ma deuxième année d'études. SLife Tracker est une entreprise spécialisée dans la géolocalisation de véhicules à Madagascar. J'ai participé à un projet en binôme, en apprenant les bonnes pratiques de développement et la gestion de projet.",
         "tasks": [
-          "Développement d'un système de génération automatique de rapports Excel à partir de données JSON de géolocalisation [citation:5]",
-          "Création de rapports de trajets et d'arrêts pour optimiser la gestion de flotte des clients [citation:5]",
-          "Utilisation de Node.js et MongoDB pour le traitement et le stockage des données [citation:5]",
-          "Collaboration avec l'équipe technique pour l'intégration des fonctionnalités"
+          "Développement d'une application web sécurisée en binôme (authentification, gestion des rôles, APIs)",
+          "Utilisation de JavaScript, TypeScript, Angular, React.js, NestJS et Express",
+          "Intégration d'API REST et sécurisation de l'authentification",
+          "Découverte et pratique des outils Atlassian (Jira, Confluence, Bitbucket) pour la gestion de projet Agile",
+          "Initiation au rôle de chef de projet : planification, suivi des tâches et collaboration en équipe"
         ],
-        "stack": ["Node.js", "MongoDB", "JSON", "Excel"]
+        "stack": ["Angular", "React", "NestJS", "Express", "TypeScript", "Jira", "Confluence"]
       },
       {
         "role": "Développeur Bénévole",
