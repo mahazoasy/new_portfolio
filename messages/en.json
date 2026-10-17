@@ -229,11 +229,12 @@
     "school": "Université Adventiste Zurcher (UAZ), Sambaina / Antsirabe",
     "period": "2023 – 2026",
     "date": "Graduated in 2026",
-    "description": "Comprehensive training covering software and web development, database design, Information Systems (IS), algorithms, and artificial intelligence. In-depth track in network administration and security (cabling, configuration, Cisco Packet Tracer) studied in the 3rd year before choosing a specialization, also including project management.",
+    "description": "Comprehensive training covering software, web, mobile, and desktop application development. The curriculum includes database design, Information Systems (IS), algorithms, artificial intelligence, and project management. In-depth track in network administration and security (cabling, configuration, Cisco Packet Tracer), studied in the 3rd year before choosing a specialization.",
     "skills": [
       "Software Engineering",
       "Information Systems (IS)",
       "Web & Mobile Development",
+      "Desktop Applications",
       "Databases",
       "Algorithms",
       "Artificial Intelligence",
