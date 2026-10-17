@@ -4,7 +4,7 @@ import { useRef, useState, useMemo } from 'react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUpRight, ExternalLink, Play } from 'lucide-react';
+import { ArrowUpRight, ExternalLink, Play, ChevronDown } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa6';
 import { projects, type Project, type ProjectCategory } from '@/lib/projects';
 import VideoModal from '@/components/ui/VideoModal';
@@ -190,10 +190,13 @@ function ProjectCard({ project, index, featured = false, onWatch, t }: ProjectCa
   );
 }
 
+const INITIAL_VISIBLE = 4;
+
 export default function Projects() {
   const t = useTranslations('projects');
   const [activeVideo, setActiveVideo] = useState<ActiveVideo | null>(null);
   const [filter, setFilter] = useState<Filter>('all');
+  const [showAll, setShowAll] = useState(false);
 
   const filters: { key: Filter; label: string }[] = [
     { key: 'all', label: t('filters.all') },
@@ -201,10 +204,20 @@ export default function Projects() {
     { key: 'mobile', label: t('filters.mobile') }
   ];
 
+  // 1. Filtre d'abord
   const filtered = useMemo(
     () => (filter === 'all' ? projects : projects.filter((p) => p.category === filter)),
     [filter]
   );
+
+  // 2. Ensuite limite l'affichage à 4 si "showAll" est false
+  const visible = useMemo(() => {
+    if (showAll) return filtered;
+    return filtered.slice(0, INITIAL_VISIBLE);
+  }, [filtered, showAll]);
+
+  const hasMore = filtered.length > INITIAL_VISIBLE;
+  const hiddenCount = filtered.length - INITIAL_VISIBLE;
 
   return (
     <>
@@ -217,7 +230,10 @@ export default function Projects() {
               <button
                 key={key}
                 type="button"
-                onClick={() => setFilter(key)}
+                onClick={() => {
+                  setFilter(key);
+                  setShowAll(false);
+                }}
                 className={cn(
                   'rounded-full border px-4 py-2 text-sm font-medium transition-colors',
                   filter === key
@@ -230,29 +246,46 @@ export default function Projects() {
             ))}
           </div>
 
-          {filtered.length === 0 ? (
+          {visible.length === 0 ? (
             <p className="mt-16 text-center text-muted">{t('empty')}</p>
           ) : (
             <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               <AnimatePresence mode="popLayout">
-                {filtered.map((project, index) => (
+                {visible.map((project, index) => (
                   <motion.div
                     key={project.slug}
                     layout
                     className={cn(
-                      filter === 'all' && index === 0 && 'md:col-span-2 lg:col-span-3'
+                      !showAll && filter === 'all' && index === 0 && 'md:col-span-2 lg:col-span-3'
                     )}
                   >
                     <ProjectCard
                       project={project}
                       index={index}
-                      featured={filter === 'all' && index === 0}
+                      featured={!showAll && filter === 'all' && index === 0}
                       onWatch={setActiveVideo}
                       t={t}
                     />
                   </motion.div>
                 ))}
               </AnimatePresence>
+            </div>
+          )}
+
+          {/* Bouton "Voir tous les projets" */}
+          {hasMore && !showAll && (
+            <div className="mt-12 flex justify-center">
+              <button
+                type="button"
+                onClick={() => setShowAll(true)}
+                className="group inline-flex h-12 items-center gap-2 rounded-full border border-border bg-card px-6 text-sm font-medium text-foreground transition-all duration-300 hover:border-accent hover:bg-accent hover:text-on-accent"
+              >
+                {t('viewAll')}
+                <span className="rounded-full bg-accent/15 px-2 py-0.5 text-xs text-accent group-hover:bg-on-accent/20 group-hover:text-on-accent">
+                  +{hiddenCount}
+                </span>
+                <ChevronDown size={16} className="transition-transform duration-300 group-hover:translate-y-0.5" />
+              </button>
             </div>
           )}
         </div>

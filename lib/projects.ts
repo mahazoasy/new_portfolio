@@ -12,6 +12,7 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  // ── 4 premiers projets (toujours visibles) ──
   {
     slug: 'allmada',
     stack: ['Angular', 'NestJS', 'MongoDB', 'Docker', 'Stripe'],
@@ -24,12 +25,11 @@ export const projects: Project[] = [
   {
     slug: 'portfolio',
     stack: ['Next.js', 'TypeScript', 'Tailwind', 'Framer Motion', 'Vercel'],
-    video: '/videos/posters/portfolio.png',
-    poster: '/videos/posters/portfolio.png',
+    video: '/videos/portfolio.mp4',
+    poster: '/videos/posters/portfolio.webp',
     github: 'https://github.com/mahazoasy/new_portfolio',
     demo: 'https://mahazoasy-heritiana.vercel.app',
-    category: 'web',
-    isImage: true
+    category: 'web'
   },
   {
     slug: 'plume-relais',
@@ -49,6 +49,7 @@ export const projects: Project[] = [
     demo: '',
     category: 'mobile'
   },
+  // ── Projets cachés (révélés au clic sur "Tous les projets") ──
   {
     slug: 'sonicflow',
     stack: ['Kotlin', 'Jetpack Compose', 'Media3', 'Room', 'Hilt'],
