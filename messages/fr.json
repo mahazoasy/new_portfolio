@@ -151,16 +151,40 @@
   "viewAll": "Voir tous les projets"
   },
   "experience": {
-    "title": "Expérience pratique",
-    "subtitle": "Ce que je sais faire",
+    "title": "Expérience",
+    "subtitle": "Parcours professionnel & engagements",
     "items": [
-      "Développement d'interfaces Web responsives avec React, Angular, Next.js et Vue.js.",
-      "Développement backend avec Node.js, NestJS, PHP et Laravel.",
-      "Conception et intégration d'API REST et de systèmes d'authentification.",
-      "Développement et intégration de bases de données MongoDB, PostgreSQL et SQL.",
-      "Développement mobile avec Android/Kotlin et React Native/Expo.",
-      "Utilisation de Git/GitHub, Docker/Docker Compose et Swagger dans les projets.",
-      "Exploration de l'intelligence artificielle avec Python et PyTorch à travers des projets de reconnaissance vocale et de classification."
+      {
+        "role": "Stagiaire Développeur Full-Stack",
+        "company": "SLife Tracker SARL",
+        "location": "Antananarivo, Madagascar",
+        "period": "2024 – 2025",
+        "description": "Stage effectué durant ma deuxième année d'études. SLife Tracker est une entreprise spécialisée dans la géolocalisation de véhicules à Madagascar [citation:1][citation:5].",
+        "tasks": [
+          "Développement d'un système de génération automatique de rapports Excel à partir de données JSON de géolocalisation [citation:5]",
+          "Création de rapports de trajets et d'arrêts pour optimiser la gestion de flotte des clients [citation:5]",
+          "Utilisation de Node.js et MongoDB pour le traitement et le stockage des données [citation:5]",
+          "Collaboration avec l'équipe technique pour l'intégration des fonctionnalités"
+        ],
+        "stack": ["Node.js", "MongoDB", "JSON", "Excel"]
+      },
+      {
+        "role": "Développeur Bénévole",
+        "company": "HELP Madagascar (ONG)",
+        "location": "Toamasina, Madagascar",
+        "period": "En cours",
+        "description": "Refonte bénévole du site web de HELP Madagascar, ONG active depuis 2000 à Toamasina, aux côtés de la promotion SPARK de l'Université Adventiste Zurcher.",
+        "tasks": [
+          "Conception d'un site trilingue rapide même en connexion faible",
+          "Développement d'un moteur de dons en ligne fiable et traçable",
+          "Architecture Next.js / TypeScript / Tailwind CSS",
+          "Hébergement Vercel + Supabase",
+          "Intégration de moyens de paiement adaptés à Madagascar",
+          "Création d'un back-office simple pour l'équipe locale"
+        ],
+        "stack": ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Vercel"],
+        "link": "https://helpmg.vercel.app"
+      }
     ]
   },
   "education": {

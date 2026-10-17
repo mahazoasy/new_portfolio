@@ -151,16 +151,40 @@
     "viewAll": "View all projects"
     },
   "experience": {
-    "title": "Practical experience",
-    "subtitle": "What I can do",
+    "title": "Experience",
+    "subtitle": "Professional journey & commitments",
     "items": [
-      "Development of responsive web interfaces with React, Angular, Next.js and Vue.js.",
-      "Backend development with Node.js, NestJS, PHP and Laravel.",
-      "Design and integration of REST APIs and authentication systems.",
-      "Development and integration of MongoDB, PostgreSQL and SQL databases.",
-      "Mobile development with Android/Kotlin and React Native/Expo.",
-      "Use of Git/GitHub, Docker/Docker Compose and Swagger in projects.",
-      "Exploration of artificial intelligence with Python and PyTorch through voice recognition and classification projects."
+      {
+        "role": "Full-Stack Developer Intern",
+        "company": "SLife Tracker SARL",
+        "location": "Antananarivo, Madagascar",
+        "period": "2024 – 2025",
+        "description": "Internship during my second year of studies. SLife Tracker is a company specialized in vehicle geolocation in Madagascar [citation:1][citation:5].",
+        "tasks": [
+          "Developed an automatic Excel report generation system from JSON geolocation data [citation:5]",
+          "Created trip and stop reports to optimize clients' fleet management [citation:5]",
+          "Used Node.js and MongoDB for data processing and storage [citation:5]",
+          "Collaborated with the technical team for feature integration"
+        ],
+        "stack": ["Node.js", "MongoDB", "JSON", "Excel"]
+      },
+      {
+        "role": "Volunteer Developer",
+        "company": "HELP Madagascar (NGO)",
+        "location": "Toamasina, Madagascar",
+        "period": "Ongoing",
+        "description": "Volunteer redesign of HELP Madagascar's website, an NGO active since 2000 in Toamasina, alongside the SPARK cohort from Université Adventiste Zurcher.",
+        "tasks": [
+          "Designed a trilingual website, fast even on low connections",
+          "Developed a reliable and traceable online donation engine",
+          "Architecture: Next.js / TypeScript / Tailwind CSS",
+          "Hosting: Vercel + Supabase",
+          "Integrated payment methods suited to Madagascar",
+          "Built a simple back-office for the local team"
+        ],
+        "stack": ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Vercel"],
+        "link": "https://helpmg.vercel.app"
+      }
     ]
   },
   "education": {
