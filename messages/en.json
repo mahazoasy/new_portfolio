@@ -225,9 +225,23 @@
   "education": {
     "title": "Education",
     "subtitle": "My academic background",
-    "degree": "Bachelor's Degree in Computer Science — Software Engineering",
+    "degree": "Bachelor's Degree in Computer Science — Software Engineering & Information Systems",
     "school": "Université Adventiste Zurcher (UAZ), Sambaina / Antsirabe",
-    "date": "Graduated in 2026"
+    "period": "2023 – 2026",
+    "date": "Graduated in 2026",
+    "description": "Comprehensive training covering software and web development, database design, Information Systems (IS), algorithms, and artificial intelligence. In-depth track in network administration and security (cabling, configuration, Cisco Packet Tracer) studied in the 3rd year before choosing a specialization, also including project management.",
+    "skills": [
+      "Software Engineering",
+      "Information Systems (IS)",
+      "Web & Mobile Development",
+      "Databases",
+      "Algorithms",
+      "Artificial Intelligence",
+      "Network Administration",
+      "Cisco Packet Tracer",
+      "Cybersecurity",
+      "Project Management"
+    ]
   },
   "softskills": {
     "title": "Strengths",

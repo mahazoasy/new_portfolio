@@ -225,9 +225,23 @@
   "education": {
     "title": "Formation",
     "subtitle": "Mon parcours académique",
-    "degree": "Licence en Informatique — Parcours Génie Logiciel",
+    "degree": "Licence en Informatique — Génie Logiciel & Systèmes d'Information",
     "school": "Université Adventiste Zurcher (UAZ), Sambaina / Antsirabe",
-    "date": "Diplômé en 2026"
+    "period": "2023 – 2026",
+    "date": "Diplômé en 2026",
+    "description": "Formation complète couvrant le développement logiciel et web, la conception de bases de données, les Systèmes d'Information (SI), l'algorithmique et l'intelligence artificielle. Parcours approfondi en administration réseau et sécurité (câblage, configuration, Cisco Packet Tracer) étudié en 3ème année avant le choix de spécialisation, incluant également le management et la gestion de projet.",
+    "skills": [
+      "Génie logiciel",
+      "Systèmes d'Information (SI)",
+      "Développement Web & Mobile",
+      "Bases de données",
+      "Algorithmique",
+      "Intelligence Artificielle",
+      "Administration réseau",
+      "Cisco Packet Tracer",
+      "Sécurité informatique",
+      "Management de projet"
+    ]
   },
   "softskills": {
     "title": "Atouts",
