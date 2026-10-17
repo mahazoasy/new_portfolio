@@ -33,7 +33,7 @@ export default function SectionHeader({
           {eyebrow}
         </p>
       )}
-      <h2 className="mt-4 text-4xl font-semibold tracking-[-0.035em] text-balance text-gradient md:text-6xl md:leading-[1.05]">
+      <h2 className="mt-2 text-4xl font-semibold tracking-[-0.035em] text-balance text-gradient md:text-6xl md:leading-[1.05]">
         {title}
       </h2>
       {description && (
