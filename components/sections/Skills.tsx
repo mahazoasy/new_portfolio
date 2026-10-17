@@ -9,9 +9,11 @@ import {
   SiPhp, SiLaravel, SiSharp, SiGraphql, SiMongodb, SiPostgresql,
   SiMysql, SiAndroid, SiKotlin, SiExpo, SiPython,
   SiPytorch, SiGit, SiGithub, SiDocker, SiFigma, SiSupabase, SiFirebase,
-  SiVercel, SiGithubactions, SiPostman, SiSwagger, SiLinux, SiNpm
+  SiVercel, SiGithubactions, SiPostman, SiSwagger, SiLinux, SiNpm,
+  SiCplusplus
 } from 'react-icons/si';
 import { TbBrandReactNative } from 'react-icons/tb';
+import { FaJava } from 'react-icons/fa';
 import { VscVscode } from 'react-icons/vsc';
 import { Code2, Image as ImageIcon, PenTool, Palette, Paintbrush, Layers } from 'lucide-react';
 import Reveal, { EASE } from '@/components/motion/Reveal';
@@ -24,7 +26,7 @@ type Skill = {
   category: Category;
 };
 
-const categories = ['frontend', 'backend', 'database', 'mobile', 'ai', 'devops', 'design'] as const;
+const categories = ['frontend', 'backend', 'database', 'mobile', 'desktop', 'ai', 'devops', 'design'] as const;
 type Category = (typeof categories)[number];
 
 const MONO = 'var(--foreground)';
@@ -58,6 +60,10 @@ const skills: Skill[] = [
   { name: 'Jetpack Compose', icon: Layers, color: '#4285F4', category: 'mobile' },
   { name: 'React Native', icon: TbBrandReactNative, color: '#61DAFB', category: 'mobile' },
   { name: 'Expo', icon: SiExpo, color: MONO, category: 'mobile' },
+
+  { name: 'C# (WPF / WinForms)', icon: SiSharp, color: '#239120', category: 'desktop' },
+  { name: 'Java (JavaFX / Swing)', icon: FaJava, color: '#007396', category: 'desktop' },
+  { name: 'C++', icon: SiCplusplus, color: '#00599C', category: 'desktop' },
 
   { name: 'Python', icon: SiPython, color: '#3776AB', category: 'ai' },
   { name: 'PyTorch', icon: SiPytorch, color: '#EE4C2C', category: 'ai' },
@@ -162,7 +168,7 @@ export default function Skills() {
                   <span className="relative text-muted transition-all duration-500 group-hover:scale-110 group-hover:text-[var(--brand)]">
                     <Icon size={40} />
                   </span>
-                  <span className="relative px-2 text-center text-sm font-medium text-foreground">{skill.name}</span>
+                  <span className="relative px-2 text-center text-xs font-medium leading-tight text-foreground">{skill.name}</span>
                 </motion.div>
               );
             })}
