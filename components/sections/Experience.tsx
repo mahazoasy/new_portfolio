@@ -11,6 +11,7 @@ import SectionHeader from './SectionHeader';
 type ExperienceItem = {
   role: string;
   company: string;
+  website?: string;
   location: string;
   period: string;
   description: string;
@@ -66,7 +67,18 @@ export default function Experience() {
                       <h3 className="text-lg font-semibold tracking-tight text-foreground md:text-xl">
                         {item.role}
                       </h3>
-                      <p className="mt-1 text-sm font-medium text-accent">{item.company}</p>
+                      {item.website ? (
+                        <a
+                          href={item.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-1 inline-block text-sm font-medium text-accent hover:underline decoration-accent underline-offset-4 transition-all"
+                        >
+                          {item.company}
+                        </a>
+                      ) : (
+                        <p className="mt-1 text-sm font-medium text-accent">{item.company}</p>
+                      )}
                     </div>
                     <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card-2 px-3 py-1 text-xs text-muted">
                       <Calendar size={12} />
