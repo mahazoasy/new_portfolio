@@ -122,7 +122,7 @@ export default function Contact() {
                     <span>
                       <span className="block text-xs text-faint">{t('location')}</span>
                       <span className="block text-sm font-medium leading-relaxed text-foreground">
-                        Lot 39 E Parcelle 23/42, Dépôt Analakininina, Toamasina I, Atsinanana, Madagascar
+                        Toamasina I, Atsinanana, Madagascar
                       </span>
                     </span>
                   </li>
