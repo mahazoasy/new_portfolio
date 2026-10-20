@@ -90,7 +90,7 @@ function Portrait() {
       >
         <div className="relative h-full w-full overflow-hidden rounded-[1.75rem]">
           <Image
-            src="/images/pdp_judi.jpg"
+            src="/images/copy.jpg"
             alt="Mahazoasy Heritiana Judicaël"
             fill
             priority
