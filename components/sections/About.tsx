@@ -72,7 +72,7 @@ export default function About() {
             <SpotlightCard className="h-full p-2">
               <div className="relative h-full min-h-[420px] overflow-hidden rounded-[1.25rem]">
                 <Image
-                  src="/images/profile1.jpg"
+                  src="/images/copy.jpg"
                   alt="Mahazoasy Heritiana Judicaël"
                   fill
                   sizes="(max-width: 1024px) 100vw, 400px"
