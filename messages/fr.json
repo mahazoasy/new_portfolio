@@ -62,32 +62,32 @@
   "services": {
     "title": "Services",
     "subtitle": "Ce que je peux construire pour vous",
-    "intro": "De l'idée à la mise en ligne — des sites, applications et outils sur mesure.",
+    "intro": "De l'idée à la mise en ligne : des sites web, des applications et des outils sur mesure.",
     "ctaTitle": "Un projet en tête ? Parlons-en.",
     "ctaButton": "Demander un devis",
     "web": {
-      "title": "Sites & applications web",
-      "desc": "Interfaces rapides et accessibles avec React et Next.js, connectées à une API Node.js et à une base de données MongoDB ou SQL."
+      "title": "Sites web et applications web",
+      "desc": "Développement d'interfaces web performantes et accessibles avec Angular, React et Next.js, intégration d'API REST avec Node.js et NestJS, et gestion de données avec MongoDB, PostgreSQL ou MySQL."
     },
     "mobile": {
       "title": "Applications mobiles",
-      "desc": "Applications Android et iOS avec React Native et Expo : navigation fluide, synchronisation en temps réel, notifications."
+      "desc": "Développement d'applications Android et iOS avec React Native et Expo : navigation fluide, synchronisation en temps réel et notifications."
     },
     "backend": {
-      "title": "API & back-end",
-      "desc": "APIs REST documentées et sécurisées (JWT, Swagger), bases de données relationnelles ou NoSQL, webhooks et intégrations tierces."
+      "title": "API et développement back-end",
+      "desc": "Conception d'API REST documentées et sécurisées avec JWT et Swagger, gestion de bases de données relationnelles ou NoSQL, webhooks et intégrations de services tiers."
     },
     "tools": {
       "title": "Outils de gestion sur mesure",
-      "desc": "Stocks, ventes, réservations, rôles utilisateurs : des applications métier adaptées à votre activité (hôtel, boutique, ONG…)."
+      "desc": "Gestion des stocks, des ventes, des réservations et des rôles utilisateurs : des applications métier adaptées à votre activité (hôtel, boutique, ONG, etc.)."
     },
     "ai": {
-      "title": "Fonctionnalités d'IA",
-      "desc": "Recommandation, classification, traitement d'images ou de voix : ajoutez de l'intelligence à votre produit."
+      "title": "Fonctionnalités d'intelligence artificielle",
+      "desc": "Recommandation, classification, traitement d'images ou de voix : intégration de fonctionnalités intelligentes adaptées aux besoins de votre produit."
     },
     "perf": {
       "title": "Optimisation des performances",
-      "desc": "Requêtes, taille du bundle, temps de chargement : des audits et optimisations ciblées pour accélérer votre application."
+      "desc": "Analyse et optimisation des requêtes, de la taille des bundles et des temps de chargement pour améliorer la rapidité et la fluidité de votre application."
     }
   },
   "skills": {

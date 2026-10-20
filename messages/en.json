@@ -62,32 +62,32 @@
   "services": {
     "title": "Services",
     "subtitle": "What I can build for you",
-    "intro": "From idea to launch — custom websites, applications and tools.",
-    "ctaTitle": "Got a project in mind? Let's talk.",
+    "intro": "From idea to launch: custom websites, applications, and tools.",
+    "ctaTitle": "Have a project in mind? Let's talk.",
     "ctaButton": "Request a quote",
     "web": {
-      "title": "Websites & web apps",
-      "desc": "Fast, accessible interfaces with React and Next.js, connected to a Node.js API and a MongoDB or SQL database."
+      "title": "Websites & web applications",
+      "desc": "Development of fast, accessible web interfaces with Angular, React, and Next.js, REST API integration with Node.js and NestJS, and data management with MongoDB, PostgreSQL, or MySQL."
     },
     "mobile": {
       "title": "Mobile applications",
-      "desc": "Android and iOS apps with React Native and Expo: smooth navigation, real-time sync, notifications."
+      "desc": "Development of Android and iOS applications with React Native and Expo, featuring smooth navigation, real-time synchronization, and notifications."
     },
     "backend": {
-      "title": "APIs & backend",
-      "desc": "Documented and secure REST APIs (JWT, Swagger), relational or NoSQL databases, webhooks and third-party integrations."
+      "title": "APIs & backend development",
+      "desc": "Design of documented and secure REST APIs using JWT and Swagger, relational and NoSQL database management, webhooks, and third-party service integrations."
     },
     "tools": {
-      "title": "Custom management tools",
-      "desc": "Inventory, sales, bookings, user roles: business apps tailored to your activity (hotel, shop, NGO…)."
+      "title": "Custom business tools",
+      "desc": "Inventory, sales, bookings, and user role management: tailored business applications for your needs, whether you run a hotel, shop, NGO, or other organization."
     },
     "ai": {
       "title": "AI features",
-      "desc": "Recommendation, classification, image or voice processing: add intelligence to your product."
+      "desc": "Recommendations, classification, image and voice processing: intelligent features tailored to your product's needs."
     },
     "perf": {
       "title": "Performance optimization",
-      "desc": "Queries, bundle size, load time: targeted audits and optimizations to speed up your application."
+      "desc": "Analysis and optimization of queries, bundle sizes, and loading times to improve your application's speed and responsiveness."
     }
   },
   "skills": {
