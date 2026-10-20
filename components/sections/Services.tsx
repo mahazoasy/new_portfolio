@@ -15,7 +15,7 @@ export default function Services() {
     {
       key: 'web',
       icon: Globe,
-      tags: ['React', 'Next.js', 'TypeScript', 'Tailwind']
+      tags: ['Angular', 'React', 'Next.js', 'TypeScript', 'Tailwind']
     },
     {
       key: 'mobile',
@@ -25,12 +25,12 @@ export default function Services() {
     {
       key: 'backend',
       icon: Server,
-      tags: ['Node.js', 'NestJS', 'Express', 'PostgreSQL', 'MongoDB', 'Laravel']
+      tags: ['Node.js', 'NestJS', 'Express', 'REST API', 'JWT', 'Swagger', 'PostgreSQL', 'MongoDB', 'Laravel']
     },
     {
       key: 'tools',
       icon: Wrench,
-      tags: ['Supabase', 'Firebase', 'PostgreSQL', 'MongoDB', 'Rôles & accès']
+      tags: ['Supabase', 'Firebase', 'PostgreSQL', 'MySQL', 'MongoDB', 'Rôles & accès']
     },
     {
       key: 'ai',
@@ -40,7 +40,7 @@ export default function Services() {
     {
       key: 'perf',
       icon: Gauge,
-      tags: ['Requêtes', 'Bundle', 'Audit']
+      tags: ['Requêtes SQL', 'Bundle size', 'Temps de chargement', 'Audit']
     }
   ];
 
