@@ -57,10 +57,10 @@ export default function Contact() {
       value: 'mahazoasyheritiana@gmail.com'
     },
     {
-      href: 'tel:+261380836502',
+      href: 'tel:+261387684280',
       icon: Phone,
       label: t('phone'),
-      value: '+261 33 66 030 90'
+      value: '+261 38 76 842 80'
     },
     {
       href: 'https://github.com/mahazoasy',
