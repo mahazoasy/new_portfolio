@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { Briefcase, Heart, MapPin, Calendar, ExternalLink } from 'lucide-react';
 import { EASE } from '@/components/motion/Reveal';
@@ -12,6 +13,7 @@ type ExperienceItem = {
   role: string;
   company: string;
   website?: string;
+  logo?: string;
   location: string;
   period: string;
   description: string;
@@ -36,7 +38,6 @@ export default function Experience() {
         </div>
 
         <div ref={listRef} className="relative">
-          {/* Ligne verticale */}
           <span aria-hidden className="absolute bottom-0 left-[19px] top-0 w-px bg-border" />
           <motion.span
             aria-hidden
@@ -55,49 +56,68 @@ export default function Experience() {
                 transition={{ duration: 0.8, ease: EASE }}
                 className="group relative flex gap-6 pb-12 last:pb-0"
               >
-                {/* Icône timeline */}
                 <span className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border bg-background text-muted transition-colors duration-500 group-hover:border-accent group-hover:text-accent">
                   <Icon size={18} />
                 </span>
 
                 <SpotlightCard className="flex-1 p-6 md:p-8">
-                  {/* En-tête */}
+                  {/* En-tête avec Logo et Titre cliquable */}
                   <div className="flex flex-wrap items-start justify-between gap-3">
-                    <div>
-                      <h3 className="text-lg font-semibold tracking-tight text-foreground md:text-xl">
-                        {item.role}
-                      </h3>
-                      {item.website ? (
-                        <a
-                          href={item.website}
-                          target="_blank"
+                    <div className="flex items-start gap-4">
+                      
+                      {/* LOGO ENTREPRISE */}
+                      {item.logo && (
+                        <a 
+                          href={item.website || '#'} 
+                          target={item.website ? "_blank" : "_self"} 
                           rel="noopener noreferrer"
-                          className="mt-1 inline-block text-sm font-medium text-accent hover:underline decoration-accent underline-offset-4 transition-all"
+                          className="mt-1 flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white p-1 shadow-sm border border-border/50 hover:scale-105 transition-transform"
                         >
-                          {item.company}
+                          <Image
+                            src={item.logo}
+                            alt={`${item.company} logo`}
+                            width={40}
+                            height={40}
+                            className="object-contain"
+                          />
                         </a>
-                      ) : (
-                        <p className="mt-1 text-sm font-medium text-accent">{item.company}</p>
                       )}
+
+                      {/* TITRE */}
+                      <div>
+                        <h3 className="text-lg font-semibold tracking-tight text-foreground md:text-xl">
+                          {item.role}
+                        </h3>
+                        {item.website ? (
+                          <a
+                            href={item.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mt-1 inline-block text-sm font-medium text-accent hover:underline decoration-accent underline-offset-4 transition-all"
+                          >
+                            {item.company}
+                          </a>
+                        ) : (
+                          <p className="mt-1 text-sm font-medium text-accent">{item.company}</p>
+                        )}
+                      </div>
                     </div>
+                    
                     <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card-2 px-3 py-1 text-xs text-muted">
                       <Calendar size={12} />
                       {item.period}
                     </span>
                   </div>
 
-                  {/* Localisation */}
                   <p className="mt-3 inline-flex items-center gap-1.5 text-xs text-faint">
                     <MapPin size={12} />
                     {item.location}
                   </p>
 
-                  {/* Description */}
                   <p className="mt-4 text-sm leading-relaxed text-pretty text-muted">
                     {item.description}
                   </p>
 
-                  {/* Tâches */}
                   <ul className="mt-5 space-y-2">
                     {item.tasks.map((task, j) => (
                       <li key={j} className="flex items-start gap-2 text-sm text-muted">
@@ -107,7 +127,6 @@ export default function Experience() {
                     ))}
                   </ul>
 
-                  {/* Stack */}
                   <div className="mt-5 flex flex-wrap gap-1.5">
                     {item.stack.map((tech) => (
                       <span
@@ -119,7 +138,6 @@ export default function Experience() {
                     ))}
                   </div>
 
-                  {/* Lien (si existe) */}
                   {item.link && (
                     <a
                       href={item.link}

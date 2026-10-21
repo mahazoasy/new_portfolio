@@ -25,11 +25,16 @@ export default function Education() {
             
             <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
               
-              {/* PARTIE GAUCHE : Logo + Texte + Description */}
               <div className="flex flex-col gap-6 flex-1">
                 <div className="flex items-start gap-5">
-                  {/* LOGO UAZ */}
-                  <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-white p-2 shadow-sm border border-border/50 mt-1">
+                  
+                  {/* LOGO UAZ CLIQUABLE */}
+                  <a 
+                    href="https://registrar.zurcher.edu.mg" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="mt-1 flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-white p-2 shadow-sm border border-border/50 hover:scale-105 transition-transform"
+                  >
                     <Image 
                       src="/images/logo-uaz.png" 
                       alt="Logo Université Adventiste Zurcher" 
@@ -37,9 +42,8 @@ export default function Education() {
                       height={48} 
                       className="object-contain"
                     />
-                  </span>
+                  </a>
                   
-                  {/* TITRE + LIEU */}
                   <div>
                     <h3 className="text-2xl font-semibold leading-tight tracking-tight text-balance text-foreground md:text-3xl">
                       {t('degree')}
@@ -51,21 +55,16 @@ export default function Education() {
                   </div>
                 </div>
 
-                {/* DESCRIPTION */}
                 <p className="text-sm md:text-base leading-relaxed text-muted">
                   {t('description')}
                 </p>
               </div>
 
-              {/* PARTIE DROITE : Période + Année + Date */}
               <div className="flex flex-col items-start gap-3 md:items-end shrink-0 md:mt-1">
-                
-                {/* PÉRIODE (Nouveau : 2023 - 2026) */}
                 <span className="inline-flex items-center gap-2 text-sm font-medium text-muted mb-2">
                   <Clock size={16} className="text-accent" />
                   {t('period')}
                 </span>
-
                 <span aria-hidden className="text-gradient text-6xl font-semibold leading-none tracking-[-0.06em] md:text-7xl lg:text-8xl">
                   2026
                 </span>
@@ -76,7 +75,6 @@ export default function Education() {
               </div>
             </div>
 
-            {/* SKILLS / COMPÉTENCES */}
             <div className="mt-8">
               <h4 className="text-sm font-semibold text-foreground mb-3">Compétences clés</h4>
               <div className="flex flex-wrap gap-2">
@@ -91,7 +89,6 @@ export default function Education() {
               </div>
             </div>
 
-            {/* Bouton En savoir plus */}
             <div className="mt-8 pt-6 border-t border-border">
               <a
                 href="https://registrar.zurcher.edu.mg"

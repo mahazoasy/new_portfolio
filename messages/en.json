@@ -192,6 +192,7 @@
         {
           "role": "Full-Stack Developer Intern",
           "company": "SLife Tracker SARL",
+          "logo": "/images/logo-slife.png",
           "website": "https://slifetracker.com/",
           "location": "Antananarivo, Madagascar",
           "period": "July – October 2025",
@@ -208,6 +209,8 @@
         {
           "role": "Volunteer Developer",
           "company": "HELP Madagascar (NGO)",
+          "logo": "/images/logo-help.png",
+          "website": "https://www.facebook.com/helpmg/?locale=fr_FR",
           "location": "Toamasina, Madagascar",
           "period": "Ongoing",
           "description": "Volunteer redesign of HELP Madagascar's website, an NGO active since 2000 in Toamasina, alongside the SPARK cohort from Université Adventiste Zurcher.",

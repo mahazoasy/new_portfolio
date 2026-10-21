@@ -193,6 +193,7 @@
         "role": "Stagiaire Développeur Full-Stack",
         "company": "SLife Tracker SARL",
         "website": "https://slifetracker.com/",
+        "logo": "/images/logo-slife.png",
         "location": "Antananarivo, Madagascar",
         "period": "Juillet – Octobre 2025",
         "description": "Stage effectué durant ma deuxième année d'études. SLife Tracker est une entreprise spécialisée dans la géolocalisation de véhicules à Madagascar. J'ai participé à un projet en binôme, en apprenant les bonnes pratiques de développement et la gestion de projet.",
@@ -208,6 +209,8 @@
       {
         "role": "Développeur Bénévole",
         "company": "HELP Madagascar (ONG)",
+        "website": "https://www.facebook.com/helpmg/?locale=fr_FR",
+        "logo": "/images/logo-help.png",
         "location": "Toamasina, Madagascar",
         "period": "En cours",
         "description": "Refonte bénévole du site web de HELP Madagascar, ONG active depuis 2000 à Toamasina, aux côtés de la promotion SPARK de l'Université Adventiste Zurcher.",
